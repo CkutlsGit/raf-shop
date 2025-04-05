@@ -2,10 +2,22 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
+  app: {
+    head: {
+      title: 'bobby',
+      script: [
+        {
+          src: 'https://telegram.org/js/telegram-web-app.js?56',
+          defer: true
+        }
+      ]
+    }
+  },
   modules: ['@pinia/nuxt', '@nuxtjs/google-fonts'],
+  css: ['~/assets/css/global.css'],
   googleFonts: {
     families: {
-      'Inter Tight': true
+      'Raleway': true
     }
   }
 })
