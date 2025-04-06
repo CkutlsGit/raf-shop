@@ -5,7 +5,7 @@ export default defineEventHandler(async (event) => {
   const { initData } = await readBody(event)
 
   try {
-    const response = await axios.post('https://shop.chasman.engineer/api/v1/auth/validate-init', {
+    const response = await axios.post('https://tgshop.chasman.engineer/api/v1/auth/validate-init', {
       initData: initData
     })
     data = response
@@ -17,5 +17,5 @@ export default defineEventHandler(async (event) => {
     console.log(data)
   }
 
-  return 'Работает'
+  return data
 })
