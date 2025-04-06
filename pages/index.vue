@@ -1,4 +1,7 @@
 <template>
-  <h2>123123</h2>
-  <h1>privet</h1>
+  <section class="main">
+    <div class="main__content">
+      
+    </div>
+  </section>
 </template>

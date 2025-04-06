@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Raleway", sans-serif;
+    background: var(--bg-color-body);
+}
+
+button {
+    border: none;
+}
+
+:root {
+    --bg-color-body: #101015;
+    --bg-color-main: #F9F9FF0D;
+    --text-color-main: #F9F9FF;
+    --text-color-green: #5BDB41;
+    --size-base: 16px;
+    --size-medium: 20px;
+    --size--big: 24px;
+}
+
+.text-color-gray {
+    color: var(--text-color-main);
+    opacity: 0.5;
+}
+
+.base-button {
+    display: flex;
+    justify-content: center;
+    width: 48px;
+    padding: var(--size-base);
+    border-radius: var(--size-base);
+    background: var(--bg-color-main);
+    backdrop-filter: 6px;
+    cursor: pointer;
+}
