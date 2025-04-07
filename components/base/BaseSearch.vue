@@ -20,7 +20,7 @@
   padding: var(--size-base) 50px var(--size-base) var(--size-base);
   background: var(--bg-color-main);
   color: var(--text-color-main);
-  font-size: var(--size-big);
+  font-size: var(--size-medium);
   font-weight: 500;
   font-family: "Raleway", sans-serif;
 }
