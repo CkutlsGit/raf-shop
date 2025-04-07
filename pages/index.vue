@@ -6,10 +6,6 @@ interface iBanner {
 }
 
 let banners = reactive([{} as iBanner])
-const bannerUrlIcon = ref<string>("")
-const bannerUrl = ref<string>("")
-
-let intervalChangedBanner: ReturnType<typeof setInterval> | null = null
 
 onMounted(async () => {
   const response = await $fetch("/api/bannerget", {
@@ -17,35 +13,7 @@ onMounted(async () => {
   })
 
   banners = response.banners
-  changedBanner(banners)
 })
-
-onUnmounted(() => {
-  if (intervalChangedBanner) {
-    clearInterval(intervalChangedBanner)
-  }
-})
-
-const changedBanner = (banners: iBanner[]): void => {
-  if (banners.length === 0) return
-
-  let currentIndex: number = 0
-
-  const updateBanner = () => {
-    const currentBanner = banners[currentIndex]
-    bannerUrlIcon.value = currentBanner.imgUrl
-    bannerUrl.value = currentBanner.link
-
-    currentIndex = (currentIndex + 1) % banners.length
-  }
-
-  updateBanner()
-  intervalChangedBanner = setInterval(updateBanner, 20000)
-}
-
-const urlTransfer = (url: string): void => {
-  window.open(url, "blank")
-}
 </script>
 
 <template>
@@ -53,7 +21,6 @@ const urlTransfer = (url: string): void => {
     <div class="main-page__content">
       <header class="main-page__header">
         <BaseSearch />
-        <img :src="bannerUrlIcon" @click="urlTransfer(bannerUrl)" />
       </header>
     </div>
   </section>
