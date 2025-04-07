@@ -2,7 +2,7 @@
 const emit = defineEmits(["isLoading"])
 const userIcon = ref("")
 
-const navArray: Array<string> = ["search", "cart"]
+const navArray: Array<string> = ["cart"]
 
 onMounted((): void => {
   const authToken: string | null = GetCookie("authtoken")
