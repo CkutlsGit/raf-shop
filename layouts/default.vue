@@ -28,7 +28,7 @@ const changeStatusLoading = (): void => {
 
 .loader__content h2 {
   margin-top: 50px;
-  font-size: var(--size-big);
+  font-size: var(--size-medium);
   color: var(--text-color-main);
 }
 </style>
