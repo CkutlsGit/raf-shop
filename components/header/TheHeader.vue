@@ -47,9 +47,7 @@ const checkTelegramWebApp = async (): Promise<void> => {
   const webApp = window.Telegram.WebApp
 
   if (webApp) {
-    // const initData = webApp.initData // todo: save в куки, юзать апи @me
-    const initData =
-      "user=%7B%22id%22%3A1489217333%2C%22first_name%22%3A%22%D0%9A%D0%BE%D1%81%D1%82%D1%8F%E2%81%B4%C2%B2%22%2C%22last_name%22%3A%22%22%2C%22username%22%3A%22Ckutls%22%2C%22language_code%22%3A%22ru%22%2C%22is_premium%22%3Atrue%2C%22allows_write_to_pm%22%3Atrue%2C%22photo_url%22%3A%22https%3A%5C%2F%5C%2Ft.me%5C%2Fi%5C%2Fuserpic%5C%2F320%5C%2FW588Ba5495X8JJOkSekRU7SXfZvDKEKh5J49ZbzWUkg.svg%22%7D&chat_instance=-7909583542551606960&chat_type=sender&auth_date=1743956874&signature=qv6cEGW430uPGDqcU5jMmyEmAhXD0kZpfAA39QjjpJJ-Lm6jnN7pII3ySFs7gD3c5C8NMHSFhb8vo-a165foDg&hash=440af4f7516212755f960c1d4a91351415e2bdc6f8a8f08bf986c587f8d406d0"
+    const initData = webApp.initData
 
     try {
       const { authToken } = await $fetch("/api/authorize", {
