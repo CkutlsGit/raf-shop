@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const emit = defineEmits(["isLoading"])
 const userIcon = ref("")
 
 const navArray: Array<string> = ["search", "cart"]
@@ -34,6 +35,7 @@ const getUserInfo = async (authToken: string | null): Promise<void> => {
 
       if (response.avatarUrl) {
         userIcon.value = response.avatarUrl
+        emit("isLoading")
       }
     } catch (error) {
       console.log(error)
