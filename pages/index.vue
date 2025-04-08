@@ -45,7 +45,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--size-base);
+  padding: 12px 8px;
 }
 
 .categories__header h1 {
