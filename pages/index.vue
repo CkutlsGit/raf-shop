@@ -4,12 +4,11 @@ let banners = ref<IBanner[]>([])
 onMounted(async () => {
   try {
     const response = await $fetch("/api/bannerget", {
-    method: "GET",
-  })
+      method: "GET",
+    })
 
-  banners.value = response.banners
-  }
-  catch (error) {
+    banners.value = response.banners
+  } catch (error) {
     console.log(error)
   }
 })
@@ -20,7 +19,7 @@ onMounted(async () => {
     <div class="main-page__content">
       <header class="main-page__header">
         <BaseSearch />
-        <BaseSwiper :banners="banners"/>
+        <BaseSwiper :banners="banners" />
       </header>
     </div>
   </section>

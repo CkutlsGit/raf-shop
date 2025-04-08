@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const containerRef = ref(null)
 const swiper = useSwiper(containerRef, {
-  effect: 'creative',
+  effect: "creative",
   loop: true,
   autoplay: {
     delay: 5000,
@@ -23,18 +23,15 @@ const props = defineProps<{
 }>()
 
 const urlTransfer = (url: string): void => {
-  window.open(url, 'blank')
+  window.open(url, "blank")
 }
 </script>
 
 <template>
   <ClientOnly>
     <swiper-container ref="containerRef" :init="false">
-      <swiper-slide
-        v-for="slide in props.banners"
-        :key="slide.id"
-      >
-      <img :src="slide.imgUrl" @click="urlTransfer(slide.link)">
+      <swiper-slide v-for="slide in props.banners" :key="slide.id">
+        <img :src="slide.imgUrl" @click="urlTransfer(slide.link)" />
       </swiper-slide>
     </swiper-container>
   </ClientOnly>
