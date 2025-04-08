@@ -1,7 +1,17 @@
 <script setup lang="ts">
-const props = defineProps<{
-  banners: IBanner[]
-}>()
+let banners = ref<IBanner[]>([])
+
+onMounted(async () => {
+  try {
+    const response = await $fetch("/api/bannerget", {
+      method: "GET",
+    })
+
+    banners.value = response.banners
+  } catch (error) {
+    console.log(error)
+  }
+})
 
 const carouselConfig = {
   itemToShow: 1,

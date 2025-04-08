@@ -1,18 +1,4 @@
-<script setup lang="ts">
-let banners = ref<IBanner[]>([])
-
-onMounted(async () => {
-  try {
-    const response = await $fetch("/api/bannerget", {
-      method: "GET",
-    })
-
-    banners.value = response.banners
-  } catch (error) {
-    console.log(error)
-  }
-})
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <section class="main-page">
