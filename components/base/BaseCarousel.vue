@@ -33,5 +33,6 @@ img {
   width: 100%;
   height: 140px;
   border-radius: var(--size-base);
+  cursor: pointer;
 }
 </style>
