@@ -8,11 +8,9 @@
 
 <style scoped>
 button {
-  display: flex;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  padding: var(--size-base);
+  width: 40px;
+  height: 40px;
+  padding: 14px var(--size-base);
   border-radius: var(--size-base);
   background: var(--bg-color-main);
   backdrop-filter: 6px;

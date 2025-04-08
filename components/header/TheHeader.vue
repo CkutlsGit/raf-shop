@@ -71,9 +71,9 @@ const checkTelegramWebApp = async (): Promise<void> => {
       <img src="@/assets/img/icon.svg" alt="Bobby" />
       <ul class="header__nav-list">
         <li v-for="(navItem, index) in navArray" :key="index">
-          <base-button>
+          <button>
             <span><img :src="`/icons/${navItem}-icon.svg`" /></span>
-          </base-button>
+          </button>
         </li>
         <img class="header__nav-list--user-icon" :src="userIcon" />
       </ul>
@@ -97,6 +97,18 @@ const checkTelegramWebApp = async (): Promise<void> => {
   display: flex;
   gap: 0 8px;
   list-style: none;
+}
+
+.header__nav-list button {
+  display: flex;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: var(--size-base);
+  border-radius: var(--size-base);
+  background: var(--bg-color-main);
+  backdrop-filter: 6px;
+  cursor: pointer;
 }
 
 .header__nav-list .header__nav-list--user-icon {
