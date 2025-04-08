@@ -1,18 +1,17 @@
 <script setup lang="ts">
-interface iBanner {
-  id: string
-  imgUrl: string
-  link: string
-}
-
-let banners = reactive([{} as iBanner])
+let banners = ref<IBanner[]>([])
 
 onMounted(async () => {
-  const response = await $fetch("/api/bannerget", {
+  try {
+    const response = await $fetch("/api/bannerget", {
     method: "GET",
   })
 
-  banners = response.banners
+  banners.value = response.banners
+  }
+  catch (error) {
+    console.log(error)
+  }
 })
 </script>
 
@@ -21,6 +20,7 @@ onMounted(async () => {
     <div class="main-page__content">
       <header class="main-page__header">
         <BaseSearch />
+        <BaseSwiper :banners="banners"/>
       </header>
     </div>
   </section>

@@ -12,4 +12,9 @@ declare global {
     avatar: string
     balance: number
   }
+  interface IBanner {
+    id: string
+    imgUrl: string
+    link: string
+  }
 }
