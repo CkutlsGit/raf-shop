@@ -69,9 +69,9 @@ onMounted(async () => {
 
 .categories__content {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
   padding: 8px;
-  gap: 10px 8px;
+  gap: 10px 0;
 }
 </style>
