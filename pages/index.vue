@@ -5,7 +5,7 @@
     <div class="main-page__content">
       <header class="main-page__header">
         <base-search></base-search>
-        <base-carousel :banners="banners"></base-carousel>
+        <base-carousel></base-carousel>
       </header>
       <article class="main-page__categories">
         <header class="categories__header">
