@@ -28,15 +28,3 @@ button {
   color: var(--text-color-main);
   opacity: 0.5;
 }
-
-.base-button {
-  display: flex;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  padding: var(--size-base);
-  border-radius: var(--size-base);
-  background: var(--bg-color-main);
-  backdrop-filter: 6px;
-  cursor: pointer;
-}

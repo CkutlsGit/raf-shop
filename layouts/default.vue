@@ -12,7 +12,7 @@ const changeStatusLoading = (): void => {
     <h2>Подгрузка данных</h2>
   </div>
   <main v-show="isLoading" class="main">
-    <HeaderTheHeader @is-loading="changeStatusLoading()" />
+    <header-the-header @is-loading="changeStatusLoading()"></header-the-header>
     <slot />
   </main>
 </template>

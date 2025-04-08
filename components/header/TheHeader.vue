@@ -71,9 +71,9 @@ const checkTelegramWebApp = async (): Promise<void> => {
       <img src="@/assets/img/icon.svg" alt="Bobby" />
       <ul class="header__nav-list">
         <li v-for="(navItem, index) in navArray" :key="index">
-          <button class="base-button">
+          <base-button>
             <span><img :src="`/icons/${navItem}-icon.svg`" /></span>
-          </button>
+          </base-button>
         </li>
         <img class="header__nav-list--user-icon" :src="userIcon" />
       </ul>

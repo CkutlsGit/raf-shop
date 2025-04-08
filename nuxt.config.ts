@@ -13,7 +13,7 @@ export default defineNuxtConfig({
       ]
     }
   },
-  modules: ['@pinia/nuxt', '@nuxtjs/google-fonts', 'nuxt-swiper'],
+  modules: ['@pinia/nuxt', '@nuxtjs/google-fonts', 'vue3-carousel-nuxt'],
   css: ['~/assets/css/global.css'],
   googleFonts: {
     families: {

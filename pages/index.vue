@@ -18,8 +18,8 @@ onMounted(async () => {
   <section class="main-page">
     <div class="main-page__content">
       <header class="main-page__header">
-        <BaseSearch />
-        <BaseSwiper :banners="banners" />
+        <base-search></base-search>
+        <base-carousel :banners="banners"></base-carousel>
       </header>
     </div>
   </section>
