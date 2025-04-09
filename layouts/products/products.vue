@@ -14,12 +14,12 @@
 .products__content {
   display: flex;
   padding: var(--size-small);
-  gap: 10px var(--size-xs);
+  gap: 10px var(--size-small);
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-@media (max-width: 360px) {
+@media (max-width: 345px) {
   .products__content {
     justify-content: center;
   }

@@ -58,17 +58,17 @@ const cutDescriptionText = computed(() => {
 }
 
 .product-item__img img {
-  width: 170px;
-  height: 170px;
+  width: 160px;
+  height: 160px;
   border-radius: 6px;
 }
 
 .product-item__text {
-  max-width: 175px;
+  max-width: 155px;
 }
 
 .product-item__text h2 {
-  font-size: var(--size-medium);
+  font-size: 18px;
   font-weight: 600;
 }
 
