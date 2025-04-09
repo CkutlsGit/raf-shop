@@ -22,7 +22,7 @@ const testDataThree: IStatus = {
 
 const descriptionTest = ref<string>("Майнкрафт категория йоу")
 
-const cutDescriptionText = computed(() => {
+const cutDescriptionText = computed((): string => {
   return descriptionTest.value.length >= 16
     ? `${descriptionTest.value.substring(0, 16)}...`
     : `${descriptionTest.value}`
