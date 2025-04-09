@@ -26,7 +26,7 @@
           <template #header>
             <header class="for-you__header block-header-style">
               <h1>Ваша подборка</h1>
-              <img src="/public/icons/arrow-icon.svg" />
+              <NuxtLink to="/for-you"><img src="/public/icons/arrow-icon.svg" /></NuxtLink>
             </header>
           </template>
         </NuxtLayout>
