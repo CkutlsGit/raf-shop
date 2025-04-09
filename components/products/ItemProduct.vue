@@ -81,7 +81,7 @@ const cutDescriptionText = computed((): string => {
 }
 
 .product-item__text {
-  max-width: 155px;
+  max-width: 165px;
 }
 
 .product-item__text h2 {
