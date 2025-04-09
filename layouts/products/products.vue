@@ -2,7 +2,7 @@
 
 <template>
   <slot name="header"></slot>
-  <ul class="products__content">
+  <ul class="products__content block-content">
     <li><products-item-product></products-item-product></li>
     <li><products-item-product></products-item-product></li>
     <li><products-item-product></products-item-product></li>
@@ -11,14 +11,6 @@
 </template>
 
 <style scoped>
-.products__content {
-  display: flex;
-  padding: var(--size-small);
-  gap: 10px var(--size-small);
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
 @media (max-width: 345px) {
   .products__content {
     justify-content: center;

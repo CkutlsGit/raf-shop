@@ -36,6 +36,33 @@ ul {
   opacity: 0.5;
 }
 
+.block-style {
+  width: 100%;
+  background: var(--bg-color-main);
+  border-radius: var(--size-base);
+  margin: var(--size-xs) 0;
+}
+
+.block-header-style {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--size-lg) var(--size-base);
+}
+
+.block-header-style h1 {
+  font-size: var(--size-medium);
+  font-weight: 600;
+}
+
+.block-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: var(--size-small);
+  gap: 20px var(--size-small);
+}
+
 .item {
   cursor: pointer;
 }

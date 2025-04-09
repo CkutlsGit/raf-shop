@@ -14,7 +14,7 @@
             <span><img src="/public/icons/arrow-icon.svg" /></span>
           </base-button>
         </header>
-        <ul class="categories__content">
+        <ul class="categories__content block-content">
           <li><category-item-category></category-item-category></li>
           <li><category-item-category></category-item-category></li>
           <li><category-item-category></category-item-category></li>
@@ -44,34 +44,7 @@
   cursor: pointer;
 }
 
-.block-style {
-  width: 100%;
-  background: var(--bg-color-main);
-  border-radius: var(--size-base);
-  margin: var(--size-xs) 0;
-}
-
 .for-you__header img {
   cursor: pointer;
-}
-
-.block-header-style {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: var(--size-lg) var(--size-base);
-}
-
-.block-header-style h1 {
-  font-size: var(--size-medium);
-  font-weight: 600;
-}
-
-.categories__content {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: var(--size-small);
-  gap: 20px var(--size-small);
 }
 </style>
