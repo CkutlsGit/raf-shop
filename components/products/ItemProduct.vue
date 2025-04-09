@@ -51,8 +51,8 @@ const cutDescriptionText = computed((): string => {
       <p class="text-color-gray">{{ cutDescriptionText }}</p>
     </div>
     <footer class="product-item__price">
-      <h2>42 000 ₴</h2>
-      <h3 class="text-color-gray">42 000 ₴</h3>
+      <h2>42 000 Ƶ</h2>
+      <h3 class="text-color-gray">42 000 Ƶ</h3>
     </footer>
   </li>
 </template>
@@ -79,7 +79,7 @@ const cutDescriptionText = computed((): string => {
 }
 
 .product-status + .product-status {
-  margin-top: calc(5% * 4);
+  margin-top: calc(4% * 4);
 }
 
 .product-status-sale {

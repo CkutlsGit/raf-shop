@@ -60,6 +60,7 @@ onMounted(() => {
 }
 
 .for-you__header img {
+  display: flex;
   cursor: pointer;
 }
 </style>

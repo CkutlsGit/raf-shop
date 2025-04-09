@@ -38,12 +38,12 @@ const urlTransfer = (url: string): void => {
 <style scoped>
 carousel {
   width: 100%;
-  height: 140px;
+  height: 100%;
 }
 
 img {
   width: 100%;
-  height: 140px;
+  height: 100%;
   border-radius: var(--size-base);
   cursor: pointer;
 }

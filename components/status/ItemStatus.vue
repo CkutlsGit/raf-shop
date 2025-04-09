@@ -22,6 +22,7 @@ const props = defineProps<{
 <style scoped>
 .status {
   display: flex;
+  justify-content: center;
   align-items: center;
   padding: var(--size-xs) var(--size-small);
 }

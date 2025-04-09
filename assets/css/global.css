@@ -38,17 +38,17 @@ ul {
 }
 
 .text-title-style {
-  font-size: var(--size-medium);
+  font-size: 5vw;
   font-weight: 600;
 }
 
 .text-subtitle-style {
-  font-size: var(--size-base);
+  font-size: 4vw;
   font-weight: 500;
 }
 
 .text-subtitle--bold-style {
-  font-size: var(--size-base);
+  font-size: 4vw;
   font-weight: 600;
 }
 
