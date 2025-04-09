@@ -11,7 +11,7 @@
 </template>
 
 <style scoped>
-@media screen and (max-width: 335px) {
+@media (max-width: 335px) {
   .products__content {
     justify-content: center;
   }

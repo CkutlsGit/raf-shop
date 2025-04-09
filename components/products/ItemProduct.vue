@@ -111,7 +111,7 @@ const cutDescriptionText = computed((): string => {
   }  
 }
 
-@media screen and (max-width: 355px) {
+@media (max-width: 355px) {
   .product-item__img img  {
     width: 155px;
     height: 155px;

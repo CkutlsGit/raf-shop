@@ -52,7 +52,7 @@ const testData: IStatus = {
   }
 }
 
-@media screen and (max-width: 355px) {
+@media (max-width: 355px) {
   .category-item__img img {
     width: 70px;
     height: 70px;
