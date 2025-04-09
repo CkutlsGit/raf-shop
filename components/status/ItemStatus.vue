@@ -15,7 +15,7 @@ const props = defineProps<{
     ]"
   >
     <img :src="configStatus.iconSrc" />
-    <h2>{{ configStatus.titleStatus }}</h2>
+    <h2 class="text-subtitle--bold-style">{{ configStatus.titleStatus }}</h2>
   </div>
 </template>
 
@@ -32,8 +32,6 @@ const props = defineProps<{
 }
 
 .status h2 {
-  font-size: 4vw;
-  font-weight: 600;
   font-variant-numeric: lining-nums proportional-nums;
   margin-left: var(--size-xs);
 }

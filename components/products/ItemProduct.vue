@@ -47,31 +47,17 @@ const cutDescriptionText = computed((): string => {
       ></status-item-status>
     </header>
     <div class="product-item__text">
-      <h2>Ключ MINECRAFT</h2>
-      <p class="text-color-gray">{{ cutDescriptionText }}</p>
+      <h2 class="text-title-style">Ключ MINECRAFT</h2>
+      <p class="text-color-gray text-subtitle-style">{{ cutDescriptionText }}</p>
     </div>
     <footer class="product-item__price">
-      <h2>42 000 Ƶ</h2>
-      <h3 class="text-color-gray">42 000 Ƶ</h3>
+      <h2 class="text-title-style">42 000 Ƶ</h2>
+      <h3 class="text-subtitle-style text-color-gray">42 000 Ƶ</h3>
     </footer>
   </li>
 </template>
 
 <style scoped>
-.product-item__img {
-  width: 100%;
-}
-
-.product-item__text h2 {
-  font-size: 5vw;
-  font-weight: 600;
-}
-
-.product-item__text p {
-  font-size: 4vw;
-  font-weight: 500;
-}
-
 .product-status {
   position: absolute;
   top: 5%;
@@ -88,25 +74,16 @@ const cutDescriptionText = computed((): string => {
   left: 5%;
 }
 
-.product-item__img img {
-  width: 100%;
-  border-radius: 6px;
-}
-
 .product-item__price {
   display: flex;
   margin-top: var(--size-xs);
 }
 
 .product-item__price h2 {
-  font-size: 5vw;
-  font-weight: 600;
   color: #42e83c;
 }
 
 .product-item__price h3 {
-  font-size: 4vw;
-  font-weight: 500;
   text-decoration: line-through;
   margin-left: var(--size-xs);
 }

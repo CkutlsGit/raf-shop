@@ -16,7 +16,7 @@ const testData: IStatus = {
         :configStatus="testData"
       ></status-item-status>
     </header>
-    <h2>Minecraft adsasdasd</h2>
+    <h2 class="text-subtitle-style">Minecraft adsasdasd</h2>
   </li>
 </template>
 
@@ -25,24 +25,13 @@ const testData: IStatus = {
   text-align: center;
 }
 
-.category-item__img {
-  width: 100%;
-}
-
 .category-status {
   position: absolute;
   bottom: 0;
   left: 0;
 }
 
-.category-item__img img {
-  width: 100%;
-  border-radius: 6px;
-}
-
 .category-item h2 {
-  font-size: 4vw;
-  font-weight: 500;
   margin: var(--size-xs) auto 0 auto;
 }
 </style>

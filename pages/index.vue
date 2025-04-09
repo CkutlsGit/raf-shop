@@ -18,7 +18,7 @@ onMounted(() => {
             <span><img src="/public/icons/arrow-icon.svg" /></span>
           </base-button>
         </header>
-        <ul class="categories__content block-content">
+        <ul class="categories__content block-content-style">
           <category-item-category></category-item-category>
           <li><category-item-category></category-item-category></li>
           <li><category-item-category></category-item-category></li>
@@ -53,10 +53,7 @@ onMounted(() => {
 }
 
 .categories__content {
-  display: grid;
-  padding: 0 var(--size-small) var(--size-small) var(--size-small);
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 8px;
 }
 
 .for-you__header img {
