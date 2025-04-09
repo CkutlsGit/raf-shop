@@ -1,15 +1,17 @@
 <script setup lang="ts">
-let banners = ref<IBanner[]>([])
+let banners = useState<IBanner[]>("banners", () => [])
 
 onMounted(async () => {
-  try {
-    const response = await $fetch("/api/bannerget", {
-      method: "GET",
-    })
+  if (!banners.value.length) {
+    try {
+      const response = await $fetch("/api/bannerget", {
+        method: "GET",
+      })
 
-    banners.value = response.banners
-  } catch (error) {
-    console.log(error)
+      banners.value = response.banners
+    } catch (error) {
+      console.log(error)
+    }
   }
 })
 
