@@ -1,31 +1,39 @@
 <script setup lang="ts">
 const testData: IStatus = {
-  titleStatus: 'Популярное',
-  iconSrc: '/icons/fire-icon.svg',
-  status: 'popular',
-  productStatus: true
+  titleStatus: "Популярное",
+  iconSrc: "/icons/fire-icon.svg",
+  status: "popular",
+  productStatus: true,
 }
 
 const testDataTwo: IStatus = {
-  titleStatus: 'Новое',
-  iconSrc: '/icons/star-icon.svg',
-  status: 'new',
-  productStatus: true
+  titleStatus: "Новое",
+  iconSrc: "/icons/star-icon.svg",
+  status: "new",
+  productStatus: true,
 }
 
-const descriptionTest = ref<string>('Майнкрафт категория йоу')
+const descriptionTest = ref<string>("Майнкрафт категория йоу")
 
 const cutDescriptionText = computed(() => {
-  return descriptionTest.value.length >= 16 ? `${ descriptionTest.value.substring(0, 16) }...` : `${ descriptionTest.value }`
+  return descriptionTest.value.length >= 16
+    ? `${descriptionTest.value.substring(0, 16)}...`
+    : `${descriptionTest.value}`
 })
 </script>
 
 <template>
   <article class="product-item item">
     <header class="product-item__img item__img">
-      <img src="/assets/img/test-img-product.png">
-      <status-item-status class="product-status" :configStatus="testData"></status-item-status>
-      <status-item-status class="product-status" :configStatus="testDataTwo"></status-item-status>
+      <img src="/assets/img/test-img-product.png" />
+      <status-item-status
+        class="product-status"
+        :configStatus="testData"
+      ></status-item-status>
+      <status-item-status
+        class="product-status"
+        :configStatus="testDataTwo"
+      ></status-item-status>
     </header>
     <div class="product-item__text">
       <h2>Ключ MINECRAFT</h2>
@@ -75,7 +83,7 @@ const cutDescriptionText = computed(() => {
 }
 
 .product-item__price h2 {
-  color: #42E83C;
+  color: #42e83c;
   font-size: var(--size-medium);
   font-weight: 600;
 }

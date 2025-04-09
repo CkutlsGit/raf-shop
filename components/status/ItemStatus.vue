@@ -5,8 +5,14 @@ const props = defineProps<{
 </script>
 
 <template>
-  <div class="status" :class="[`${ configStatus.status }-status-bg`, configStatus.productStatus ? 'status-item' : 'status-category']">
-    <img :src="configStatus.iconSrc">
+  <div
+    class="status"
+    :class="[
+      `${configStatus.status}-status-bg`,
+      configStatus.productStatus ? 'status-item' : 'status-category',
+    ]"
+  >
+    <img :src="configStatus.iconSrc" />
     <h2>{{ configStatus.titleStatus }}</h2>
   </div>
 </template>

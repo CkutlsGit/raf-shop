@@ -1,17 +1,20 @@
-<script setup lang='ts'>
+<script setup lang="ts">
 const testData: IStatus = {
-  titleStatus: 'Новое',
-  iconSrc: '/icons/star-icon.svg',
-  status: 'new',
-  productStatus: false
+  titleStatus: "Новое",
+  iconSrc: "/icons/star-icon.svg",
+  status: "new",
+  productStatus: false,
 }
 </script>
 
 <template>
   <article class="category-item item">
     <header class="category-item__img item__img">
-      <img src="/assets/img/test-img.png">
-      <status-item-status class="category-status" :configStatus="testData"></status-item-status>
+      <img src="/assets/img/test-img.png" />
+      <status-item-status
+        class="category-status"
+        :configStatus="testData"
+      ></status-item-status>
     </header>
     <h2>Minecraft adsasdasd</h2>
   </article>
