@@ -18,6 +18,10 @@ const testData: IStatus = {
 </template>
 
 <style scoped>
+.category-item {
+  text-align: center;
+}
+
 .category-status {
   position: absolute;
   bottom: 0;

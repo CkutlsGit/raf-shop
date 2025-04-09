@@ -12,6 +12,12 @@ const testDataTwo: IStatus = {
   status: 'new',
   productStatus: true
 }
+
+const descriptionTest = ref<string>('Майнкрафт категория йоу')
+
+const cutDescriptionText = computed(() => {
+  return descriptionTest.value.length >= 16 ? `${ descriptionTest.value.substring(0, 16) }...` : `${ descriptionTest.value }`
+})
 </script>
 
 <template>
@@ -21,6 +27,14 @@ const testDataTwo: IStatus = {
       <status-item-status class="product-status" :configStatus="testData"></status-item-status>
       <status-item-status class="product-status" :configStatus="testDataTwo"></status-item-status>
     </header>
+    <div class="product-item__text">
+      <h2>Ключ MINECRAFT</h2>
+      <p class="text-color-gray">{{ cutDescriptionText }}</p>
+    </div>
+    <footer class="product-item__price">
+      <h2>42 000 ₴</h2>
+      <h3 class="text-color-gray">42 000 ₴</h3>
+    </footer>
   </article>
 </template>
 
@@ -36,8 +50,40 @@ const testDataTwo: IStatus = {
 }
 
 .product-item__img img {
-  width: 180px;
-  height: 180px;
+  width: 170px;
+  height: 170px;
   border-radius: 6px;
+}
+
+.product-item__text {
+  max-width: 175px;
+}
+
+.product-item__text h2 {
+  font-size: var(--size-medium);
+  font-weight: 600;
+}
+
+.product-item__text p {
+  font-size: var(--size-base);
+  font-weight: 500;
+}
+
+.product-item__price {
+  display: flex;
+  margin-top: var(--size-xs);
+}
+
+.product-item__price h2 {
+  color: #42E83C;
+  font-size: var(--size-medium);
+  font-weight: 600;
+}
+
+.product-item__price h3 {
+  font-size: var(--size-base);
+  font-weight: 500;
+  text-decoration: line-through;
+  margin-left: var(--size-xs);
 }
 </style>
