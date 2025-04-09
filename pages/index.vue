@@ -72,6 +72,6 @@
   justify-content: space-between;
   flex-wrap: wrap;
   padding: var(--size-small);
-  gap: 20px 0;
+  gap: 20px var(--size-small);
 }
 </style>
