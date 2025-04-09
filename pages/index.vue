@@ -59,7 +59,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--size-lg) var(--size-small);
+  padding: var(--size-lg) var(--size-base);
 }
 
 .block-header-style h1 {
@@ -72,6 +72,6 @@
   justify-content: space-between;
   flex-wrap: wrap;
   padding: var(--size-small);
-  gap: 10px 0;
+  gap: 20px 0;
 }
 </style>
