@@ -75,8 +75,8 @@ const cutDescriptionText = computed((): string => {
 }
 
 .product-item__img img {
-  width: 160px;
-  height: 160px;
+  width: 165px;
+  height: 165px;
   border-radius: 6px;
 }
 

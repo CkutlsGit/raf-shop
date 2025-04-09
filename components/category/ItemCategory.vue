@@ -32,8 +32,8 @@ const testData: IStatus = {
 }
 
 .category-item__img img {
-  width: 75px;
-  height: 75px;
+  width: 78px;
+  height: 78px;
   border-radius: 6px;
 }
 
@@ -41,6 +41,6 @@ const testData: IStatus = {
   font-size: var(--size-base);
   font-weight: 500;
   margin-top: var(--size-xs);
-  max-width: 75px;
+  max-width: 78px;
 }
 </style>
