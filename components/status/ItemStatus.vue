@@ -35,6 +35,6 @@ const props = defineProps<{
   font-size: 4vw;
   font-weight: 600;
   font-variant-numeric: lining-nums proportional-nums;
-  margin-left: var(--size-small);
+  margin-left: var(--size-xs);
 }
 </style>
