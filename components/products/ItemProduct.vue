@@ -13,6 +13,13 @@ const testDataTwo: IStatus = {
   productStatus: true,
 }
 
+const testDataThree: IStatus = {
+  titleStatus: "Скидка 15%",
+  iconSrc: "/icons/note-icon.svg",
+  status: "sale",
+  productStatus: true,
+}
+
 const descriptionTest = ref<string>("Майнкрафт категория йоу")
 
 const cutDescriptionText = computed(() => {
@@ -33,6 +40,10 @@ const cutDescriptionText = computed(() => {
       <status-item-status
         class="product-status"
         :configStatus="testDataTwo"
+      ></status-item-status>
+      <status-item-status
+        class="product-status-sale"
+        :configStatus="testDataThree"
       ></status-item-status>
     </header>
     <div class="product-item__text">
@@ -55,6 +66,12 @@ const cutDescriptionText = computed(() => {
 
 .product-status + .product-status {
   margin-top: calc(var(--size-small) * 4);
+}
+
+.product-status-sale {
+  position: absolute;
+  bottom: var(--size-small);
+  left: var(--size-small);
 }
 
 .product-item__img img {
