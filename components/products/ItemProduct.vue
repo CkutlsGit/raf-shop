@@ -98,7 +98,7 @@ const cutDescriptionText = computed((): string => {
   margin-left: var(--size-xs);
 }
 
-@media screen and (max-width: 375px) {
+@media (width <= 375px) {
   .product-item__img img  {
     width: 165px;
     height: 165px;
@@ -111,7 +111,7 @@ const cutDescriptionText = computed((): string => {
   }  
 }
 
-@media (max-width: 355px) {
+@media (width <= 355px) {
   .product-item__img img  {
     width: 155px;
     height: 155px;

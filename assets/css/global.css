@@ -5,6 +5,7 @@
 }
 
 body {
+  overflow-x: hidden;
   color: var(--text-color-main);
   font-family: "Raleway", sans-serif;
   background: var(--bg-color-body);

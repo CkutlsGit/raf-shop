@@ -42,7 +42,7 @@ const testData: IStatus = {
   max-width: 85px;
 }
 
-@media screen and (max-width: 384px) {
+@media (width <= 384px) {
   .category-item__img img {
     width: 75px;
     height: 75px;
@@ -52,7 +52,7 @@ const testData: IStatus = {
   }
 }
 
-@media (max-width: 355px) {
+@media (width <= 355px) {
   .category-item__img img {
     width: 70px;
     height: 70px;
