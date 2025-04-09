@@ -20,6 +20,7 @@ declare global {
   interface IStatus {
     titleStatus: string,
     iconSrc: string,
-    status: string
+    status: string,
+    productStatus: boolean
   }
 }

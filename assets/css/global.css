@@ -36,6 +36,25 @@ ul {
   opacity: 0.5;
 }
 
+.item {
+  text-align: center;
+  cursor: pointer;
+}
+
+.item__img {
+  position: relative;
+  display: inline-block;
+}
+
+.status-category {
+  border-radius: 0 0 6px 6px;
+  width: 100%;
+}
+
+.status-item {
+  border-radius: 6px;
+}
+
 .new-status-bg {
   background: linear-gradient(90deg, #3C53E8 0%, #7DB3F6 100%);
 }

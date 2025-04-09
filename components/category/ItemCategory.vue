@@ -2,31 +2,22 @@
 const testData: IStatus = {
   titleStatus: 'Новое',
   iconSrc: '/icons/star-icon.svg',
-  status: 'new'
+  status: 'new',
+  productStatus: false
 }
 </script>
 
 <template>
-  <article class="category-item">
-    <header class="category-item__img">
+  <article class="category-item item">
+    <header class="category-item__img item__img">
       <img src="/assets/img/test-img.png">
-      <status-item-category-status class="category-status" :configStatus="testData"></status-item-category-status>
+      <status-item-status class="category-status" :configStatus="testData"></status-item-status>
     </header>
     <h2>Minecraft adsasdasd</h2>
   </article>
 </template>
 
 <style scoped>
-.category-item {
-  text-align: center;
-  cursor: pointer;
-}
-
-.category-item__img {
-  position: relative;
-  display: inline-block;
-}
-
 .category-status {
   position: absolute;
   bottom: 0;

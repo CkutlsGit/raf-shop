@@ -5,7 +5,7 @@ const props = defineProps<{
 </script>
 
 <template>
-  <div class="status" :class="`${ configStatus.status }-status-bg`">
+  <div class="status" :class="[`${ configStatus.status }-status-bg`, configStatus.productStatus ? 'status-item' : 'status-category']">
     <img :src="configStatus.iconSrc">
     <h2>{{ configStatus.titleStatus }}</h2>
   </div>
@@ -16,8 +16,6 @@ const props = defineProps<{
   display: flex;
   align-items: center;
   padding: var(--size-xs);
-  border-radius: 0 0 6px 6px;
-  width: 100%;
 }
 
 .status h2 {
