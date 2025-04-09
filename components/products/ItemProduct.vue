@@ -119,5 +119,9 @@ const cutDescriptionText = computed((): string => {
   .product-item__text {
     max-width: 155px;
   }
+  .product-status + .product-status {
+  margin-top: calc(var(--size-small) * 3.5);
+}
+
 }
 </style>

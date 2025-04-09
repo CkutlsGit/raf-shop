@@ -27,4 +27,10 @@ const props = defineProps<{
 .status h2 {
   margin-left: var(--size-xs);
 }
+
+@media screen and (max-width: 355px) {
+  .status h2 {
+    font-size: 14px;
+  }
+}
 </style>
