@@ -75,13 +75,13 @@ const cutDescriptionText = computed((): string => {
 }
 
 .product-item__img img {
-  width: 175px;
-  height: 175px;
+  width: 180px;
+  height: 180px;
   border-radius: 6px;
 }
 
 .product-item__text {
-  max-width: 175px;
+  max-width: 180px;
 }
 
 .product-item__price {
@@ -98,30 +98,4 @@ const cutDescriptionText = computed((): string => {
   margin-left: var(--size-xs);
 }
 
-@media (width <= 375px) {
-  .product-item__img img  {
-    width: 165px;
-    height: 165px;
-  }
-  .product-item__text {
-    max-width: 165px;
-  }
-  .product-item__text h2 {
-    font-size: 18px;
-  }  
-}
-
-@media (width <= 355px) {
-  .product-item__img img  {
-    width: 155px;
-    height: 155px;
-  }
-  .product-item__text {
-    max-width: 155px;
-  }
-  .product-status + .product-status {
-  margin-top: calc(var(--size-small) * 3.5);
-}
-
-}
 </style>

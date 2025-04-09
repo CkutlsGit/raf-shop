@@ -41,24 +41,4 @@ const testData: IStatus = {
   margin-top: var(--size-xs);
   max-width: 85px;
 }
-
-@media (width <= 384px) {
-  .category-item__img img {
-    width: 75px;
-    height: 75px;
-  }
-  .category-item h2 {
-    max-width: 75px;
-  }
-}
-
-@media (width <= 355px) {
-  .category-item__img img {
-    width: 70px;
-    height: 70px;
-  }
-  .category-item h2 {
-    max-width: 70px;
-  }
-}
 </style>

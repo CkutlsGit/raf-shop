@@ -11,9 +11,4 @@
 </template>
 
 <style scoped>
-@media (width <= 335px) {
-  .products__content {
-    justify-content: center;
-  }
-}
 </style>
