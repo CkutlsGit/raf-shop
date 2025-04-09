@@ -79,7 +79,7 @@ const cutDescriptionText = computed((): string => {
 }
 
 .product-status + .product-status {
-  margin-top: calc(var(--size-small) * 4);
+  margin-top: calc(5% * 4);
 }
 
 .product-status-sale {
