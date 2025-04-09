@@ -1,4 +1,8 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+onMounted(() => {
+  console.log(window.innerWidth)
+})
+</script>
 
 <template>
   <section class="main-page">
