@@ -30,7 +30,7 @@ const cutDescriptionText = computed((): string => {
 </script>
 
 <template>
-  <article class="product-item item">
+  <li class="product-item item">
     <header class="product-item__img item__img">
       <img src="/assets/img/test-img-product.png" />
       <status-item-status
@@ -47,21 +47,35 @@ const cutDescriptionText = computed((): string => {
       ></status-item-status>
     </header>
     <div class="product-item__text">
-      <h2 class="text-title-style">Ключ MINECRAFT</h2>
-      <p class="text-subtitle-style text-color-gray">{{ cutDescriptionText }}</p>
+      <h2>Ключ MINECRAFT</h2>
+      <p class="text-color-gray">{{ cutDescriptionText }}</p>
     </div>
     <footer class="product-item__price">
-      <h2 class="text-title-style">42 000 ₴</h2>
-      <h3 class="text-subtitle-style text-color-gray">42 000 ₴</h3>
+      <h2>42 000 ₴</h2>
+      <h3 class="text-color-gray">42 000 ₴</h3>
     </footer>
-  </article>
+  </li>
 </template>
 
 <style scoped>
+.product-item__img {
+  width: 100%;
+}
+
+.product-item__text h2 {
+  font-size: 5vw;
+  font-weight: 600;
+}
+
+.product-item__text p {
+  font-size: 4vw;
+  font-weight: 500;
+}
+
 .product-status {
   position: absolute;
-  top: var(--size-small);
-  left: var(--size-small);
+  top: 5%;
+  left: 5%;
 }
 
 .product-status + .product-status {
@@ -70,18 +84,13 @@ const cutDescriptionText = computed((): string => {
 
 .product-status-sale {
   position: absolute;
-  bottom: var(--size-small);
-  left: var(--size-small);
+  bottom: 5%;
+  left: 5%;
 }
 
 .product-item__img img {
-  width: 180px;
-  height: 180px;
+  width: 100%;
   border-radius: 6px;
-}
-
-.product-item__text {
-  max-width: 180px;
 }
 
 .product-item__price {
@@ -90,10 +99,14 @@ const cutDescriptionText = computed((): string => {
 }
 
 .product-item__price h2 {
+  font-size: 5vw;
+  font-weight: 600;
   color: #42e83c;
 }
 
 .product-item__price h3 {
+  font-size: 4vw;
+  font-weight: 500;
   text-decoration: line-through;
   margin-left: var(--size-xs);
 }

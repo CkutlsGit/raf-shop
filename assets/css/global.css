@@ -66,14 +66,6 @@ ul {
   padding: var(--size-lg) var(--size-base);
 }
 
-.block-content {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: var(--size-small);
-  gap: 10px var(--size-small);
-}
-
 .item {
   cursor: pointer;
 }

@@ -8,7 +8,7 @@ const testData: IStatus = {
 </script>
 
 <template>
-  <article class="category-item item">
+  <li class="category-item item">
     <header class="category-item__img item__img">
       <img src="/assets/img/test-img.png" />
       <status-item-status
@@ -16,13 +16,17 @@ const testData: IStatus = {
         :configStatus="testData"
       ></status-item-status>
     </header>
-    <h2 class="text-subtitle-style">Minecraft adsasdasd</h2>
-  </article>
+    <h2>Minecraft adsasdasd</h2>
+  </li>
 </template>
 
 <style scoped>
 .category-item {
   text-align: center;
+}
+
+.category-item__img {
+  width: 100%;
 }
 
 .category-status {
@@ -32,13 +36,13 @@ const testData: IStatus = {
 }
 
 .category-item__img img {
-  width: 85px;
-  height: 85px;
+  width: 100%;
   border-radius: 6px;
 }
 
 .category-item h2 {
-  margin-top: var(--size-xs);
-  max-width: 85px;
+  font-size: 4vw;
+  font-weight: 500;
+  margin: var(--size-xs) auto 0 auto;
 }
 </style>

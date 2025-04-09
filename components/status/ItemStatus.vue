@@ -2,6 +2,8 @@
 const props = defineProps<{
   configStatus: IStatus
 }>()
+
+// todo: grid заебашить + padding поменять font-variant-numeric: lining-nums proportional-nums;
 </script>
 
 <template>
@@ -13,7 +15,7 @@ const props = defineProps<{
     ]"
   >
     <img :src="configStatus.iconSrc" />
-    <h2 class="text-subtitle--bold-style">{{ configStatus.titleStatus }}</h2>
+    <h2>{{ configStatus.titleStatus }}</h2>
   </div>
 </template>
 
@@ -21,10 +23,16 @@ const props = defineProps<{
 .status {
   display: flex;
   align-items: center;
-  padding: var(--size-xs);
+  padding: var(--size-xs) var(--size-small);
+}
+
+.status img {
+  width: 3vw;
 }
 
 .status h2 {
-  margin-left: var(--size-xs);
+  font-size: 4vw;
+  font-weight: 600;
+  margin-left: var(--size-small);
 }
 </style>
