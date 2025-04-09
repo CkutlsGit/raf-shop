@@ -13,6 +13,7 @@
 <style scoped>
 .category-item {
   text-align: center;
+  cursor: pointer;
 }
 
 .category-item__img {
