@@ -7,13 +7,13 @@ const testData: IStatus = {
 </script>
 
 <template>
-  <div class="category-item">
-    <div class="category-item__img">
+  <article class="category-item">
+    <header class="category-item__img">
       <img src="/assets/img/test-img.png">
       <status-item-category-status class="category-status" :configStatus="testData"></status-item-category-status>
-    </div>
+    </header>
     <h2>Minecraft adsasdasd</h2>
-  </div>
+  </article>
 </template>
 
 <style scoped>

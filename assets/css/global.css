@@ -14,6 +14,10 @@ button {
   border: none;
 }
 
+ul {
+  list-style: none;
+}
+
 :root {
   --bg-color-body: #101015;
   --bg-color-main: #f9f9ff0d;

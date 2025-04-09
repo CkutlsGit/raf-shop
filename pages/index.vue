@@ -14,13 +14,19 @@
           <span><img src="/public/icons/arrow-icon.svg"></span>
           </base-button>
         </header>
-        <div class="categories__content">
-          <category-item-category></category-item-category>
-          <category-item-category></category-item-category>
-          <category-item-category></category-item-category>
-          <category-item-category></category-item-category>
-        </div>
+        <ul class="categories__content">
+          <li><category-item-category></category-item-category></li>
+          <li><category-item-category></category-item-category></li>
+          <li><category-item-category></category-item-category></li>
+          <li><category-item-category></category-item-category></li>
+        </ul>
       </article>
+      <footer class="main-page__for-you">
+        <header class="for-you__header">
+          <h1>Ваша подборка</h1>
+          <img src="/public/icons/arrow-icon.svg">
+        </header>  
+      </footer>
     </div>
   </section>
 </template>
