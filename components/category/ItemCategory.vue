@@ -16,7 +16,7 @@ const testData: IStatus = {
         :configStatus="testData"
       ></status-item-status>
     </header>
-    <h2>Minecraft adsasdasd</h2>
+    <h2 class="text-subtitle-style">Minecraft adsasdasd</h2>
   </article>
 </template>
 
@@ -38,8 +38,6 @@ const testData: IStatus = {
 }
 
 .category-item h2 {
-  font-size: var(--size-base);
-  font-weight: 500;
   margin-top: var(--size-xs);
   max-width: 78px;
 }

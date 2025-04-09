@@ -9,7 +9,7 @@
       </header>
       <article class="main-page__categories block-style">
         <header class="categories__header block-header-style">
-          <h1>Категории</h1>
+          <h1 class="text-title-style">Категории</h1>
           <base-button>
             <span><img src="/public/icons/arrow-icon.svg" /></span>
           </base-button>
@@ -25,7 +25,7 @@
         <NuxtLayout name="products">
           <template #header>
             <header class="for-you__header block-header-style">
-              <h1>Ваша подборка</h1>
+              <h1 class="text-title-style">Ваша подборка</h1>
               <NuxtLink to="/for-you"><img src="/public/icons/arrow-icon.svg" /></NuxtLink>
             </header>
           </template>

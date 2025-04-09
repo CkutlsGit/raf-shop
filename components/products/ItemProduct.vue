@@ -48,11 +48,11 @@ const cutDescriptionText = computed((): string => {
     </header>
     <div class="product-item__text">
       <h2>Ключ MINECRAFT</h2>
-      <p class="text-color-gray">{{ cutDescriptionText }}</p>
+      <p class="text-subtitle-style text-color-gray">{{ cutDescriptionText }}</p>
     </div>
     <footer class="product-item__price">
-      <h2>42 000 ₴</h2>
-      <h3 class="text-color-gray">42 000 ₴</h3>
+      <h2 class="text-title-style">42 000 ₴</h2>
+      <h3 class="text-subtitle-style text-color-gray">42 000 ₴</h3>
     </footer>
   </article>
 </template>
@@ -89,11 +89,6 @@ const cutDescriptionText = computed((): string => {
   font-weight: 600;
 }
 
-.product-item__text p {
-  font-size: var(--size-base);
-  font-weight: 500;
-}
-
 .product-item__price {
   display: flex;
   margin-top: var(--size-xs);
@@ -101,13 +96,9 @@ const cutDescriptionText = computed((): string => {
 
 .product-item__price h2 {
   color: #42e83c;
-  font-size: var(--size-medium);
-  font-weight: 600;
 }
 
 .product-item__price h3 {
-  font-size: var(--size-base);
-  font-weight: 500;
   text-decoration: line-through;
   margin-left: var(--size-xs);
 }
