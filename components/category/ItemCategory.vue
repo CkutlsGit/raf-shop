@@ -32,13 +32,23 @@ const testData: IStatus = {
 }
 
 .category-item__img img {
-  width: 78px;
-  height: 78px;
+  width: 85px;
+  height: 85px;
   border-radius: 6px;
 }
 
 .category-item h2 {
   margin-top: var(--size-xs);
-  max-width: 78px;
+  max-width: 85px;
+}
+
+@media screen and (max-width: 380px) {
+  .category-item__img img {
+    width: 75px;
+    height: 75px;
+  }
+  .category-item h2 {
+    max-width: 75px;
+  }
 }
 </style>

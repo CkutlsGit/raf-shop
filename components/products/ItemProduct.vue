@@ -47,7 +47,7 @@ const cutDescriptionText = computed((): string => {
       ></status-item-status>
     </header>
     <div class="product-item__text">
-      <h2>Ключ MINECRAFT</h2>
+      <h2 class="text-title-style">Ключ MINECRAFT</h2>
       <p class="text-subtitle-style text-color-gray">{{ cutDescriptionText }}</p>
     </div>
     <footer class="product-item__price">
@@ -75,18 +75,13 @@ const cutDescriptionText = computed((): string => {
 }
 
 .product-item__img img {
-  width: 165px;
-  height: 165px;
+  width: 175px;
+  height: 175px;
   border-radius: 6px;
 }
 
 .product-item__text {
-  max-width: 165px;
-}
-
-.product-item__text h2 {
-  font-size: 18px;
-  font-weight: 600;
+  max-width: 175px;
 }
 
 .product-item__price {
@@ -101,5 +96,28 @@ const cutDescriptionText = computed((): string => {
 .product-item__price h3 {
   text-decoration: line-through;
   margin-left: var(--size-xs);
+}
+
+@media screen and (max-width: 375px) {
+  .product-item__img img  {
+    width: 165px;
+    height: 165px;
+  }
+  .product-item__text {
+    max-width: 165px;
+  }
+  .product-item__text h2 {
+    font-size: 18px;
+  }  
+}
+
+@media screen and (max-width: 355px) {
+  .product-item__img img  {
+    width: 155px;
+    height: 155px;
+  }
+  .product-item__text {
+    max-width: 155px;
+  }
 }
 </style>
