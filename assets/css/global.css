@@ -20,6 +20,8 @@ button {
   --text-color-main: #f9f9ff;
   --text-color-green: #5bdb41;
   --size-xs: 4px;
+  --size-small: 8px;
+  --size-lg: 12px;
   --size-base: 16px;
   --size-medium: 20px;
   --size-big: 24px;

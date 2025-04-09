@@ -99,7 +99,7 @@ const checkTelegramWebApp = async (): Promise<void> => {
 
 .header__nav-list {
   display: flex;
-  gap: 0 8px;
+  gap: 0 var(--size-small);
   list-style: none;
 }
 

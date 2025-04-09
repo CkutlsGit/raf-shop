@@ -45,7 +45,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 8px;
+  padding: var(--size-lg) var(--size-small);
 }
 
 .categories__header h1 {
@@ -57,7 +57,7 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: 8px;
+  padding: var(--size-small);
   gap: 10px 0;
 }
 </style>
