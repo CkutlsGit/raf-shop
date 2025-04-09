@@ -68,7 +68,7 @@ const checkTelegramWebApp = async (): Promise<void> => {
 <template>
   <header class="header">
     <nav class="header__content">
-      <img src="@/assets/img/icon.svg" alt="Bobby" />
+      <img class="header__logo" src="@/assets/img/icon.svg" alt="Bobby" />
       <ul class="header__nav-list">
         <li v-for="(navItem, index) in navArray" :key="index">
           <button>
@@ -93,6 +93,10 @@ const checkTelegramWebApp = async (): Promise<void> => {
   justify-content: space-between;
 }
 
+.header__logo {
+  cursor: pointer;
+}
+
 .header__nav-list {
   display: flex;
   gap: 0 8px;
@@ -115,5 +119,6 @@ const checkTelegramWebApp = async (): Promise<void> => {
   width: 48px;
   height: 48px;
   border-radius: 50%;
+  cursor: pointer;
 }
 </style>
