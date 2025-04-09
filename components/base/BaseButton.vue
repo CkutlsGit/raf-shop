@@ -10,7 +10,7 @@
 button {
   width: 40px;
   height: 40px;
-  padding: 14px var(--size-base) 14px 18px;
+  padding: 13px 15px 13px 17px;
   border-radius: var(--size-base);
   background: var(--bg-color-main);
   backdrop-filter: 6px;
