@@ -33,6 +33,7 @@ const props = defineProps<{
 .status h2 {
   font-size: 4vw;
   font-weight: 600;
+  font-variant-numeric: lining-nums proportional-nums;
   margin-left: var(--size-small);
 }
 </style>
