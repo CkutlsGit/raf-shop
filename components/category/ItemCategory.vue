@@ -1,10 +1,16 @@
-<script setup lang='ts'></script>
+<script setup lang='ts'>
+const testData: IStatus = {
+  titleStatus: 'Новое',
+  iconSrc: '/icons/star-icon.svg',
+  status: 'new'
+}
+</script>
 
 <template>
   <div class="category-item">
     <div class="category-item__img">
       <img src="/assets/img/test-img.png">
-      <status-item-category-status class="category-status"></status-item-category-status>
+      <status-item-category-status class="category-status" :configStatus="testData"></status-item-category-status>
     </div>
     <h2>Minecraft adsasdasd</h2>
   </div>

@@ -1,11 +1,13 @@
 <script setup lang="ts">
-
+const props = defineProps<{
+  configStatus: IStatus
+}>()
 </script>
 
 <template>
-  <div class="status">
-    <img src="/public/icons/star-icon.svg">
-    <h2>Новое</h2>
+  <div class="status" :class="`${ configStatus.status }-status-bg`">
+    <img :src="configStatus.iconSrc">
+    <h2>{{ configStatus.titleStatus }}</h2>
   </div>
 </template>
 
@@ -14,9 +16,8 @@
   display: flex;
   align-items: center;
   padding: var(--size-xs);
-  background: linear-gradient(90deg, #3C53E8 0%, #7DB3F6 100%);
   border-radius: 0 0 6px 6px;
-  width: 75px;
+  width: 100%;
 }
 
 .status h2 {

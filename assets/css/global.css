@@ -31,3 +31,15 @@ button {
   color: var(--text-color-main);
   opacity: 0.5;
 }
+
+.new-status-bg {
+  background: linear-gradient(90deg, #3C53E8 0%, #7DB3F6 100%);
+}
+
+.popular-status-bg {
+  background: linear-gradient(90deg, #EC403A 0%, #E2964E 100%);
+}
+
+.sale-status-bg {
+  background: linear-gradient(90deg, #EC3A63 0%, #E35F7D 100%);
+}

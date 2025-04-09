@@ -17,4 +17,9 @@ declare global {
     imgUrl: string
     link: string
   }
+  interface IStatus {
+    titleStatus: string,
+    iconSrc: string,
+    status: string
+  }
 }
