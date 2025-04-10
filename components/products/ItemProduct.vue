@@ -70,7 +70,7 @@ const cutDescriptionText = computed((): string => {
 
 .product-status-sale {
   position: absolute;
-  bottom: 5%;
+  bottom: 6%;
   left: 5%;
 }
 
