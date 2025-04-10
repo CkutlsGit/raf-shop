@@ -27,17 +27,15 @@ const waitForTelegramWebApp = (): void => {
 const getUserInfo = async (authToken: string | null): Promise<void> => {
   if (authToken) {
     try {
-      const response = await fetch(`${ runTimeConfig.public.backendUrl }/api/v1/users/@me`, {
+      const response = await $fetch<any>(`${ runTimeConfig.public.backendUrl }/api/v1/users/@me`, {
         method: "GET",
         headers: {
           Authorization: authToken,
         },
       })
-      const data = await response.json()
-      console.log(data)
       
-      if (data.avatarUrl) {
-        userIcon.value = data.avatarUrl
+      if (response.avatarUrl) {
+        userIcon.value = response.avatarUrl
         emit("isLoading")
       }
     } catch (error) {
@@ -53,15 +51,14 @@ const checkTelegramWebApp = async (): Promise<void> => {
     const initData = webApp.initData
 
     try {
-      const response = await fetch(`${ runTimeConfig.public.backendUrl }/api/v1/auth/validate-init`, {
+      const { authToken } = await $fetch<any>(`${ runTimeConfig.public.backendUrl }/api/v1/auth/validate-init`, {
         method: "POST",
-        body: JSON.stringify({ initData: initData }),
+        body: { initData: initData },
       })
-      const data = await response.json()
 
-      SetCookie("authtoken", data.authToken)
+      SetCookie("authtoken", authToken)
 
-      getUserInfo(data.authToken)
+      getUserInfo(authToken)
     } catch (error) {
       console.error("Ошибка при отправке запроса:", error)
     }
