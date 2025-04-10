@@ -27,7 +27,7 @@ const waitForTelegramWebApp = (): void => {
 const getUserInfo = async (authToken: string | null): Promise<void> => {
   if (authToken) {
     try {
-      const response = await $fetch<any>(`${ runTimeConfig.public.backendUrl }/api/v1/users/@me`, {
+      const response = await $fetch<IUser>(`${ runTimeConfig.public.backendUrl }/api/v1/users/@me`, {
         method: "GET",
         headers: {
           Authorization: authToken,
@@ -50,6 +50,7 @@ const checkTelegramWebApp = async (): Promise<void> => {
   if (webApp) {
     const initData = webApp.initData
 
+    console.log(initData)
     try {
       const { authToken } = await $fetch<any>(`${ runTimeConfig.public.backendUrl }/api/v1/auth/validate-init`, {
         method: "POST",

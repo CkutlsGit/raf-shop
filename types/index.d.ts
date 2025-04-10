@@ -1,4 +1,4 @@
-export { IUser }
+export { IUser, IBanner, IStatus }
 
 declare global {
   interface Window {
@@ -9,7 +9,7 @@ declare global {
   interface IUser {
     name: string
     username: string
-    avatar: string
+    avatarUrl: string
     balance: number
   }
   interface IBanner {
