@@ -1,4 +1,8 @@
 <script setup lang="ts">
+interface IAuthToken {
+  authToken: string
+}
+
 const runTimeConfig = useRuntimeConfig()
 const emit = defineEmits(["isLoading"])
 const userIcon = ref("")
@@ -50,9 +54,8 @@ const checkTelegramWebApp = async (): Promise<void> => {
   if (webApp) {
     const initData = webApp.initData
 
-    console.log(initData)
     try {
-      const { authToken } = await $fetch<any>(`${ runTimeConfig.public.backendUrl }/api/v1/auth/validate-init`, {
+      const { authToken } = await $fetch<IAuthToken>(`${ runTimeConfig.public.backendUrl }/api/v1/auth/validate-init`, {
         method: "POST",
         body: { initData: initData },
       })
