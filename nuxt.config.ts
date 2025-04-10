@@ -22,7 +22,7 @@ export default defineNuxtConfig({
   css: ['~/assets/css/global.css'],
   googleFonts: {
     families: {
-      'Raleway': true
+      'Raleway': [500, 600]
     }
   }
 })
