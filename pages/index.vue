@@ -20,13 +20,6 @@ onMounted(() => {
         </header>
         <ul class="categories__content block-content-style">
           <category-item-category></category-item-category>
-          <li><category-item-category></category-item-category></li>
-          <li><category-item-category></category-item-category></li>
-          <li><category-item-category></category-item-category></li>
-          <li><category-item-category></category-item-category></li>
-          <li><category-item-category></category-item-category></li>
-          <li><category-item-category></category-item-category></li>
-          <li><category-item-category></category-item-category></li>
         </ul>
       </article>
       <footer class="main-page__for-you block-style">

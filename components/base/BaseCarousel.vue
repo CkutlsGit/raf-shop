@@ -1,16 +1,18 @@
 <script setup lang="ts">
+const runTimeConfig = useRuntimeConfig()
 let banners = useState<IBanner[]>("banners", () => [])
 
 onMounted(async () => {
   if (!banners.value.length) {
     try {
-      const response = await $fetch("/api/bannerget", {
-        method: "GET",
+      const response = await fetch(`${ runTimeConfig.public.backendUrl }/api/v1/banners`, {
+        method: 'GET'
       })
-
-      banners.value = response.banners
-    } catch (error) {
-      console.log(error)
+      const data = await response.json()
+      banners.value = data.banners
+    }
+    catch (error) {
+      console.error(error)
     }
   }
 })

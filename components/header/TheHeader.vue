@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const runTimeConfig = useRuntimeConfig()
 const emit = defineEmits(["isLoading"])
 const userIcon = ref("")
 
@@ -26,15 +27,17 @@ const waitForTelegramWebApp = (): void => {
 const getUserInfo = async (authToken: string | null): Promise<void> => {
   if (authToken) {
     try {
-      const response = await $fetch("/api/userget", {
+      const response = await fetch(`${ runTimeConfig.public.backendUrl }/api/v1/users/@me`, {
         method: "GET",
         headers: {
           Authorization: authToken,
         },
       })
-
-      if (response.avatarUrl) {
-        userIcon.value = response.avatarUrl
+      const data = await response.json()
+      console.log(data)
+      
+      if (data.avatarUrl) {
+        userIcon.value = data.avatarUrl
         emit("isLoading")
       }
     } catch (error) {
@@ -50,14 +53,15 @@ const checkTelegramWebApp = async (): Promise<void> => {
     const initData = webApp.initData
 
     try {
-      const { authToken } = await $fetch("/api/authorize", {
+      const response = await fetch(`${ runTimeConfig.public.backendUrl }/api/v1/auth/validate-init`, {
         method: "POST",
-        body: { initData: initData },
+        body: JSON.stringify({ initData: initData }),
       })
+      const data = await response.json()
 
-      SetCookie("authtoken", authToken)
+      SetCookie("authtoken", data.authToken)
 
-      getUserInfo(authToken)
+      getUserInfo(data.authToken)
     } catch (error) {
       console.error("Ошибка при отправке запроса:", error)
     }
