@@ -5,18 +5,25 @@ const testData: IStatus = {
   status: "new",
   productStatus: false,
 }
+
+const props = defineProps<{
+  isNew: boolean
+  iconUrl: string,
+  name: string
+}>()
 </script>
 
 <template>
   <li class="category-item item">
     <header class="category-item__img item__img">
-      <img src="/assets/img/test-img.png" />
+       <img :src="iconUrl">
       <status-item-status
+      v-if="isNew"
         class="category-status"
         :configStatus="testData"
       ></status-item-status>
     </header>
-    <h2 class="text-subtitle-style">Minecraft adsasdasd</h2>
+    <h2 class="text-subtitle-style">{{ name }}</h2>
   </li>
 </template>
 
@@ -33,5 +40,6 @@ const testData: IStatus = {
 
 .category-item h2 {
   margin: var(--size-xs) auto 0 auto;
+  word-wrap: break-word;
 }
 </style>

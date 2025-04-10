@@ -17,6 +17,13 @@ declare global {
     imgUrl: string
     link: string
   }
+  interface ICategories {
+    id: string,
+    name: string,
+    iconUrl: string,
+    isNew: boolean,
+    sub: Array // todo: в будущем интерфейс
+  }
   interface IStatus {
     titleStatus: string,
     iconSrc: string,

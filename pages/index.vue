@@ -1,6 +1,18 @@
 <script setup lang="ts">
-onMounted(() => {
-  console.log(window.innerWidth)
+interface IApiCategories {
+  categories: ICategories[]
+}
+
+const runTimeConfig = useRuntimeConfig()
+const categories = ref<ICategories[]>()
+
+onMounted(async () => {
+  const response = await $fetch<IApiCategories>(`${ runTimeConfig.public.backendUrl }/api/v1/categories`, {
+    method: 'GET'
+  }) 
+
+  categories.value = response.categories
+  console.log(categories.value)
 })
 </script>
 
@@ -19,7 +31,9 @@ onMounted(() => {
           </base-button>
         </header>
         <ul class="categories__content block-content-style">
-          <category-item-category></category-item-category>
+          <template v-for="(category, index) in categories" :key="category.id">
+            <category-item-category v-if="index < 8" :is-new="category.isNew" :icon-url="category.iconUrl" :name="category.name"></category-item-category>
+          </template>
         </ul>
       </article>
       <footer class="main-page__for-you block-style">
