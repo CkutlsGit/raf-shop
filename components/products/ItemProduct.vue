@@ -77,12 +77,9 @@ const cutDescriptionText = (categoryName: string): string => {
 .product-item__img {
   width: 100%;
   height: 70%;
-  border-radius: .5rem;
-  aspect-ratio: 1/1;
 }
 
 .product-item__img img {
-  object-fit: fill;
   width: 100%;
   height: 100%;
 }
