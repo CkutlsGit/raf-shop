@@ -17,9 +17,7 @@ const props = defineProps<{
   product: IProduct
 }>()
 
-const descriptionTest = ref<string>("Майнкрафт категория йоу")
-
-const cutDescriptionText =(categoryName: string): string => {
+const cutDescriptionText = (categoryName: string): string => {
   return categoryName.length >= 16
     ? `${categoryName.substring(0, 16)}...`
     : `${categoryName}`
@@ -42,16 +40,25 @@ const cutDescriptionText =(categoryName: string): string => {
       ></status-item-status>
       <status-item-status
         class="product-status-sale"
-        :configStatus="{ titleStatus: `Скидка ${ product.discountPercent.toFixed(0) }%`, iconSrc: `/icons/note-icon.svg`, status: 'sale', productStatus: true }"
+        :configStatus="{
+          titleStatus: `Скидка ${product.discountPercent.toFixed(0)}%`,
+          iconSrc: `/icons/note-icon.svg`,
+          status: 'sale',
+          productStatus: true,
+        }"
       ></status-item-status>
     </header>
     <div class="product-item__text">
       <h2 class="text-title-style">{{ product.name }}</h2>
-      <p class="text-color-gray text-subtitle-style">{{ cutDescriptionText(product.categoryName) }}</p>
+      <p class="text-color-gray text-subtitle-style">
+        {{ cutDescriptionText(product.categoryName) }}
+      </p>
     </div>
     <footer class="product-item__price">
       <h2 class="text-title-style">{{ product.price }} ₽</h2>
-      <h3 class="text-subtitle-style text-color-gray">{{ product.originalPrice }} ₽</h3>
+      <h3 class="text-subtitle-style text-color-gray">
+        {{ product.originalPrice }} ₽
+      </h3>
     </footer>
   </li>
 </template>
@@ -90,5 +97,4 @@ const cutDescriptionText =(categoryName: string): string => {
   text-decoration: line-through;
   margin-left: var(--size-xs);
 }
-
 </style>

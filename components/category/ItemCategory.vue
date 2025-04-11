@@ -8,7 +8,7 @@ const testData: IStatus = {
 
 const props = defineProps<{
   isNew: boolean
-  iconUrl: string,
+  iconUrl: string
   name: string
 }>()
 </script>
@@ -16,9 +16,9 @@ const props = defineProps<{
 <template>
   <li class="category-item item">
     <header class="category-item__img item__img">
-       <img :src="iconUrl">
+      <img :src="iconUrl" />
       <status-item-status
-      v-if="isNew"
+        v-if="isNew"
         class="category-status"
         :configStatus="testData"
       ></status-item-status>

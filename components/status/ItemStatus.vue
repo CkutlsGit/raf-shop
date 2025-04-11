@@ -2,8 +2,6 @@
 const props = defineProps<{
   configStatus: IStatus
 }>()
-
-// todo: grid заебашить + padding поменять font-variant-numeric: lining-nums proportional-nums;
 </script>
 
 <template>

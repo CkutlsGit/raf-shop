@@ -9,12 +9,14 @@ let banners = useState<IBanner[]>("banners", () => [])
 onMounted(async () => {
   if (!banners.value.length) {
     try {
-      const response = await $fetch<IApiBanner>(`${ runTimeConfig.public.backendUrl }/api/v1/banners`, {
-        method: 'GET'
-      })
+      const response = await $fetch<IApiBanner>(
+        `${runTimeConfig.public.backendUrl}/api/v1/banners`,
+        {
+          method: "GET",
+        }
+      )
       banners.value = response.banners
-    }
-    catch (error) {
+    } catch (error) {
       console.error(error)
     }
   }

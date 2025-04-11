@@ -31,13 +31,16 @@ const waitForTelegramWebApp = (): void => {
 const getUserInfo = async (authToken: string | null): Promise<void> => {
   if (authToken) {
     try {
-      const response = await $fetch<IUser>(`${ runTimeConfig.public.backendUrl }/api/v1/users/@me`, {
-        method: "GET",
-        headers: {
-          Authorization: authToken,
-        },
-      })
-      
+      const response = await $fetch<IUser>(
+        `${runTimeConfig.public.backendUrl}/api/v1/users/@me`,
+        {
+          method: "GET",
+          headers: {
+            Authorization: authToken,
+          },
+        }
+      )
+
       if (response.avatarUrl) {
         userIcon.value = response.avatarUrl
         emit("isLoading")
@@ -55,10 +58,13 @@ const checkTelegramWebApp = async (): Promise<void> => {
     const initData = webApp.initData
 
     try {
-      const { authToken } = await $fetch<IAuthToken>(`${ runTimeConfig.public.backendUrl }/api/v1/auth/validate-init`, {
-        method: "POST",
-        body: { initData: initData },
-      })
+      const { authToken } = await $fetch<IAuthToken>(
+        `${runTimeConfig.public.backendUrl}/api/v1/auth/validate-init`,
+        {
+          method: "POST",
+          body: { initData: initData },
+        }
+      )
 
       SetCookie("authtoken", authToken)
 
