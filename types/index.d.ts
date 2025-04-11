@@ -24,6 +24,18 @@ declare global {
     isNew: boolean,
     sub: Array // todo: в будущем интерфейс
   }
+  interface IProduct {
+    categoryName: string,
+    discountPercent: number,
+    id: string,
+    imgUrl: string,
+    inStock: boolean,
+    isNew: boolean,
+    isPopular: boolean,
+    name: string,
+    originalPrice: number,
+    price: number
+  }
   interface IStatus {
     titleStatus: string,
     iconSrc: string,

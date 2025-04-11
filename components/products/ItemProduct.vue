@@ -1,58 +1,57 @@
 <script setup lang="ts">
-const testData: IStatus = {
+const popularStatus: IStatus = {
   titleStatus: "Популярное",
   iconSrc: "/icons/fire-icon.svg",
   status: "popular",
   productStatus: true,
 }
 
-const testDataTwo: IStatus = {
+const newStatus: IStatus = {
   titleStatus: "Новое",
   iconSrc: "/icons/star-icon.svg",
   status: "new",
   productStatus: true,
 }
 
-const testDataThree: IStatus = {
-  titleStatus: "Скидка 15%",
-  iconSrc: "/icons/note-icon.svg",
-  status: "sale",
-  productStatus: true,
-}
+const props = defineProps<{
+  product: IProduct
+}>()
 
 const descriptionTest = ref<string>("Майнкрафт категория йоу")
 
-const cutDescriptionText = computed((): string => {
-  return descriptionTest.value.length >= 16
-    ? `${descriptionTest.value.substring(0, 16)}...`
-    : `${descriptionTest.value}`
-})
+const cutDescriptionText =(categoryName: string): string => {
+  return categoryName.length >= 16
+    ? `${categoryName.substring(0, 16)}...`
+    : `${categoryName}`
+}
 </script>
 
 <template>
   <li class="product-item item">
     <header class="product-item__img item__img">
-      <img src="/assets/img/test-img-product.png" />
+      <img :src="product.imgUrl" />
       <status-item-status
         class="product-status"
-        :configStatus="testData"
+        v-if="product.isPopular"
+        :configStatus="popularStatus"
       ></status-item-status>
       <status-item-status
         class="product-status"
-        :configStatus="testDataTwo"
+        v-if="product.isNew"
+        :configStatus="newStatus"
       ></status-item-status>
       <status-item-status
         class="product-status-sale"
-        :configStatus="testDataThree"
+        :configStatus="{ titleStatus: `Скидка ${ product.discountPercent.toFixed(0) }%`, iconSrc: `/icons/note-icon.svg`, status: 'sale', productStatus: true }"
       ></status-item-status>
     </header>
     <div class="product-item__text">
-      <h2 class="text-title-style">Ключ MINECRAFT</h2>
-      <p class="text-color-gray text-subtitle-style">{{ cutDescriptionText }}</p>
+      <h2 class="text-title-style">{{ product.name }}</h2>
+      <p class="text-color-gray text-subtitle-style">{{ cutDescriptionText(product.categoryName) }}</p>
     </div>
     <footer class="product-item__price">
-      <h2 class="text-title-style">42 000 Ƶ</h2>
-      <h3 class="text-subtitle-style text-color-gray">42 000 Ƶ</h3>
+      <h2 class="text-title-style">{{ product.price }} ₽</h2>
+      <h3 class="text-subtitle-style text-color-gray">{{ product.originalPrice }} ₽</h3>
     </footer>
   </li>
 </template>
@@ -66,6 +65,10 @@ const cutDescriptionText = computed((): string => {
 
 .product-status + .product-status {
   margin-top: calc(4% * 4);
+}
+
+.product-item__img img {
+  min-height: 185px;
 }
 
 .product-status-sale {
