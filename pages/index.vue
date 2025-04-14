@@ -46,7 +46,7 @@ onMounted(async () => {
       <footer class="main-page__for-you block-style">
         <NuxtLayout name="products">
           <template #header>
-            <header class="for-you__header block-header-style">
+            <header class="for-you__header block-header-style block-header-img-style">
               <h1 class="text-title-style">Ваша подборка</h1>
               <NuxtLink to="/for-you"
                 ><img src="/public/icons/arrow-icon.svg"
@@ -70,10 +70,5 @@ onMounted(async () => {
 
 .categories__content {
   grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.for-you__header img {
-  display: flex;
-  cursor: pointer;
 }
 </style>
