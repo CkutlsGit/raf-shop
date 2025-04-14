@@ -8,10 +8,18 @@
       <NuxtLayout name="products" :type-layout="'header-products'">
           <template #header>
             <header class="for-you__header block-header-style block-header-img-style">
-              <h1 class="text-title-style">Ваша подборка</h1>
+              <nav class="for-you__header-nav">
+                <base-button class="icon-arrow-back">
+                  <span><img src="/public/icons/arrow-back-icon.svg"></span>
+                </base-button>
+                <h1 class="text-title-style">Ваша подборка</h1>
+              </nav>
               <NuxtLink to="/for-you"
-                ><img src="/public/icons/arrow-icon.svg"
-              /></NuxtLink>
+                >
+                <base-button class="icon-search">
+                  <img src="/public/icons/search-icon.svg"
+                </base-button>
+              </NuxtLink>
             </header>
           </template>
         </NuxtLayout>
@@ -24,5 +32,11 @@
   background: var(--bg-color-main);
   border-radius: var(--size-base);
   margin: var(--size-xs) 0;
+}
+
+.for-you__header-nav {
+  display: flex;
+  align-items: center;
+  gap: 0 12px;
 }
 </style>

@@ -28,7 +28,7 @@ onMounted(async () => {
       <article class="main-page__categories block-style">
         <header class="categories__header block-header-style">
           <h1 class="text-title-style">Категории</h1>
-          <base-button>
+          <base-button class="icon-arrow">
             <span><img src="/public/icons/arrow-icon.svg" /></span>
           </base-button>
         </header>
