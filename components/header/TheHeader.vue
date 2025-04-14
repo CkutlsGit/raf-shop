@@ -79,7 +79,9 @@ const checkTelegramWebApp = async (): Promise<void> => {
 <template>
   <header class="header">
     <nav class="header__content">
-      <img class="header__logo" src="@/assets/img/icon.svg" alt="Bobby" />
+      <NuxtLink to="/">
+        <img class="header__logo" src="@/assets/img/icon.svg" alt="Bobby" />
+      </NuxtLink>
       <ul class="header__nav-list">
         <li v-for="(navItem, index) in navArray" :key="index">
           <button>
@@ -101,6 +103,7 @@ const checkTelegramWebApp = async (): Promise<void> => {
 
 .header__content {
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
