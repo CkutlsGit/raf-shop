@@ -93,6 +93,18 @@ ul {
   border-radius: 6px;
 }
 
+.icon-arrow {
+  padding: 13px 15px 13px 17px;
+}
+
+.icon-arrow-back {
+  padding: 14px var(--size-base);
+}
+
+.icon-search {
+  padding: 11px;
+}
+
 .status-category {
   border-radius: 0 0 6px 6px;
   width: 100%;
