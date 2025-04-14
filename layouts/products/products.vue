@@ -1,13 +1,15 @@
 <script setup lang="ts">
 const runTimeConfig = useRuntimeConfig()
-const products = ref<IProduct[]>()
+const products = useState<IProduct[]>('products', () => [])
 
 const props = defineProps<{
   typeLayout: string
 }>()
 
 onMounted(async () => {
-  const response = await $fetch<IProduct[]>(
+  if (!products.value.length) {
+    try {
+      const response = await $fetch<IProduct[]>(
     `${runTimeConfig.public.backendUrl}/api/v1/products`,
     {
       method: "GET",
@@ -15,6 +17,11 @@ onMounted(async () => {
   )
 
   products.value = response
+    }
+    catch (error) {
+      console.error(error)
+    }
+  }
 })
 </script>
 
