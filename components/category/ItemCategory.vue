@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const testData: IStatus = {
+const newStatus: IStatus = {
   titleStatus: "Новое",
   iconSrc: "/icons/star-icon.svg",
   status: "new",
@@ -20,7 +20,7 @@ const props = defineProps<{
       <status-item-status
         v-if="isNew"
         class="category-status"
-        :configStatus="testData"
+        :configStatus="newStatus"
       ></status-item-status>
     </header>
     <h2 class="text-subtitle-style">{{ name }}</h2>
