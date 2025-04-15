@@ -39,12 +39,6 @@ onMounted(async () => {
 <style scoped>
 .products__content {
   grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.split-block-style {
-  width: 100%;
-  background: var(--bg-color-main);
-  border-radius: var(--size-base);
   padding: var(--size-small);
 }
 </style>
