@@ -1,6 +1,4 @@
-<script lang="ts" setup>
-
-</script>
+<script lang="ts" setup></script>
 
 <template>
   <section class="categories">
@@ -8,21 +6,22 @@
       <base-search></base-search>
       <NuxtLayout name="categories" :type-layout="'header-categories'">
         <template #header>
-            <header class="for-you__header block-header-style block-header-img-style">
-              <nav class="for-you__header-nav">
-                <base-button class="icon-arrow-back">
-                  <span><img src="/public/icons/arrow-back-icon.svg"></span>
-                </base-button>
-                <h1 class="text-title-style">Категории</h1>
-              </nav>
-              <NuxtLink
-                >
-                <base-button class="icon-search">
-                  <img src="/public/icons/search-icon.svg"
-                </base-button>
-              </NuxtLink>
-            </header>
-          </template>
+          <header
+            class="for-you__header block-header-style block-header-img-style"
+          >
+            <nav class="for-you__header-nav">
+              <base-button class="icon-arrow-back">
+                <span><img src="/public/icons/arrow-back-icon.svg" /></span>
+              </base-button>
+              <h1 class="text-title-style">Категории</h1>
+            </nav>
+            <NuxtLink>
+              <base-button class="icon-search">
+                <img src="/public/icons/search-icon.svg"
+              </base-button>
+            </NuxtLink>
+          </header>
+        </template>
       </NuxtLayout>
     </div>
   </section>

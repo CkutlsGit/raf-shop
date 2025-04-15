@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const runTimeConfig = useRuntimeConfig()
-const products = useState<IProduct[]>('products', () => [])
+const products = useState<IProduct[]>("products", () => [])
 
 const props = defineProps<{
   typeLayout: string
@@ -10,15 +10,14 @@ onMounted(async () => {
   if (!products.value.length) {
     try {
       const response = await $fetch<IProduct[]>(
-    `${runTimeConfig.public.backendUrl}/api/v1/products`,
-    {
-      method: "GET",
-    }
-  )
+        `${runTimeConfig.public.backendUrl}/api/v1/products`,
+        {
+          method: "GET",
+        }
+      )
 
-  products.value = response
-    }
-    catch (error) {
+      products.value = response
+    } catch (error) {
       console.error(error)
     }
   }
@@ -27,7 +26,10 @@ onMounted(async () => {
 
 <template>
   <slot name="header"></slot>
-  <ul class="products__content block-content-style" :class="{ 'split-block-style': typeLayout }">
+  <ul
+    class="products__content block-content-style"
+    :class="{ 'split-block-style': typeLayout }"
+  >
     <products-item-product
       v-for="product in products"
       :key="product.id"
