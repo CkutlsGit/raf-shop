@@ -1,21 +1,4 @@
 <script setup lang="ts">
-interface IApiCategories {
-  categories: ICategories[]
-}
-
-const runTimeConfig = useRuntimeConfig()
-const categories = ref<ICategories[]>()
-
-onMounted(async () => {
-  const response = await $fetch<IApiCategories>(
-    `${runTimeConfig.public.backendUrl}/api/v1/categories`,
-    {
-      method: "GET",
-    }
-  )
-
-  categories.value = response.categories
-})
 </script>
 
 <template>
@@ -26,22 +9,18 @@ onMounted(async () => {
         <base-carousel></base-carousel>
       </header>
       <article class="main-page__categories block-style">
-        <header class="categories__header block-header-style">
-          <h1 class="text-title-style">Категории</h1>
-          <base-button class="icon-arrow">
-            <span><img src="/public/icons/arrow-icon.svg" /></span>
-          </base-button>
-        </header>
-        <ul class="categories__content block-content-style">
-          <template v-for="(category, index) in categories" :key="category.id">
-            <category-item-category
-              v-if="index < 8"
-              :is-new="category.isNew"
-              :icon-url="category.iconUrl"
-              :name="category.name"
-            ></category-item-category>
+        <NuxtLayout name="categories">
+          <template #header>
+            <header class="categories__header block-header-style">
+              <h1 class="text-title-style">Категории</h1>
+              <NuxtLink to="/categories">
+                <base-button class="icon-arrow">
+                <span><img src="/public/icons/arrow-icon.svg" /></span>
+              </base-button>
+              </NuxtLink>
+            </header>
           </template>
-        </ul>
+        </NuxtLayout>
       </article>
       <footer class="main-page__for-you block-style">
         <NuxtLayout name="products">
@@ -66,9 +45,5 @@ onMounted(async () => {
   border-radius: var(--size-base);
   margin: var(--size-xs) 0;
   cursor: pointer;
-}
-
-.categories__content {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 </style>

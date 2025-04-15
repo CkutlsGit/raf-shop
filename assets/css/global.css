@@ -60,6 +60,12 @@ ul {
   margin: var(--size-xs) 0;
 }
 
+.split-block-style {
+  width: 100%;
+  background: var(--bg-color-main);
+  border-radius: var(--size-base);
+}
+
 .block-header-style {
   display: flex;
   justify-content: space-between;
