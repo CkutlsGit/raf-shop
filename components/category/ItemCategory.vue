@@ -7,24 +7,24 @@ const newStatus: IStatus = {
 }
 
 const props = defineProps<{
-  isNew: boolean
-  iconUrl: string
-  name: string
+  categories: ICategories
 }>()
 </script>
 
 <template>
-  <li class="category-item item">
+  <NuxtLink :to="`/categories/${ categories.id }`">
+    <li class="category-item item">
     <header class="category-item__img item__img">
-      <img :src="iconUrl" />
+      <img :src="categories.iconUrl" />
       <status-item-status
-        v-if="isNew"
+        v-if="categories.isNew"
         class="category-status"
         :configStatus="newStatus"
       ></status-item-status>
     </header>
-    <h2 class="text-subtitle-style">{{ name }}</h2>
+    <h2 class="text-subtitle-style">{{ categories.name }}</h2>
   </li>
+  </NuxtLink>
 </template>
 
 <style scoped>
@@ -41,5 +41,7 @@ const props = defineProps<{
 .category-item h2 {
   margin: var(--size-xs) auto 0 auto;
   word-wrap: break-word;
+  color: var(--text-color-main);
+  font-weight: 500;
 }
 </style>

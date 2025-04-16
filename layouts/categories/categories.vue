@@ -37,9 +37,7 @@ onMounted(async () => {
     <template v-for="(category, index) in categories" :key="category.id">
       <category-item-category
         v-if="typeLayout ? true : index < 8"
-        :is-new="category.isNew"
-        :icon-url="category.iconUrl"
-        :name="category.name"
+        :categories="category"
       ></category-item-category>
     </template>
   </ul>
