@@ -8,7 +8,7 @@
         <base-carousel></base-carousel>
       </header>
       <article class="main-page__categories block-style">
-        <NuxtLayout name="categories">
+        <NuxtLayout name="categories" :type-layout="false">
           <template #header>
             <header class="categories__header block-header-style">
               <h1 class="text-title-style">Категории</h1>
@@ -22,7 +22,7 @@
         </NuxtLayout>
       </article>
       <footer class="main-page__for-you block-style">
-        <NuxtLayout name="products">
+        <NuxtLayout name="products" :type-layout="false">
           <template #header>
             <header
               class="for-you__header block-header-style block-header-img-style"

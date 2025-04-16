@@ -4,7 +4,7 @@
   <section class="categories">
     <div class="categories__content">
       <base-search></base-search>
-      <NuxtLayout name="categories" :type-layout="'header-categories'">
+      <NuxtLayout name="categories" :type-layout="true">
         <template #header>
           <header
             class="for-you__header block-header-style block-header-img-style"

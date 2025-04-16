@@ -3,7 +3,7 @@
 <template>
   <section class="for-you">
     <div class="for-you__content">
-      <NuxtLayout name="products" :type-layout="'header-products'">
+      <NuxtLayout name="products" :type-layout="true">
         <template #header>
           <header
             class="for-you__header block-header-style block-header-img-style"

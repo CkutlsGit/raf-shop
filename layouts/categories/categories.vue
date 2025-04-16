@@ -7,7 +7,7 @@ const runTimeConfig = useRuntimeConfig()
 const categories = useState<ICategories[]>("categories", () => [])
 
 const props = defineProps<{
-  typeLayout: string
+  typeLayout: boolean
 }>()
 
 onMounted(async () => {

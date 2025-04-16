@@ -3,7 +3,7 @@ const runTimeConfig = useRuntimeConfig()
 const products = useState<IProduct[]>("products", () => [])
 
 const props = defineProps<{
-  typeLayout: string
+  typeLayout: boolean
 }>()
 
 onMounted(async () => {
