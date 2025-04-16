@@ -9,16 +9,18 @@
             class="for-you__header block-header-style block-header-img-style"
           >
             <nav class="for-you__header-nav">
-              <base-button class="icon-arrow-back">
+              <NuxtLink to="/">
+                <base-button class="icon-arrow-back">
                 <span><img src="/public/icons/arrow-back-icon.svg" /></span>
               </base-button>
+              </NuxtLink>
               <h1 class="text-title-style">Ваша подборка</h1>
             </nav>
-            <NuxtLink to="/for-you">
+            <!-- <NuxtLink to="/for-you">
               <base-button class="icon-search">
                 <img src="/public/icons/search-icon.svg"
               </base-button>
-            </NuxtLink>
+            </NuxtLink> -->
           </header>
         </template>
       </NuxtLayout>
