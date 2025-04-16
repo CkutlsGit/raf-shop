@@ -68,6 +68,7 @@ ul {
   width: 100%;
   background: var(--bg-color-main);
   border-radius: var(--size-base);
+  padding: var(--size-small) !important;
 }
 
 .block-header-style {

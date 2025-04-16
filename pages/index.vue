@@ -28,9 +28,11 @@
               class="for-you__header block-header-style block-header-img-style"
             >
               <h1 class="text-title-style">Ваша подборка</h1>
-              <NuxtLink to="/for-you"
-                ><img src="/public/icons/arrow-icon.svg"
-              /></NuxtLink>
+              <NuxtLink to="/for-you">
+                <base-button class="icon-arrow">
+                  <span><img src="/public/icons/arrow-icon.svg" /></span>
+                </base-button>
+              </NuxtLink>
             </header>
           </template>
         </NuxtLayout>
