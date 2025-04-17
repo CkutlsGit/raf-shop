@@ -43,6 +43,10 @@ const urlTransfer = (url: string): void => {
 </template>
 
 <style scoped>
+.carousel {
+  margin-top: var(--size-xs);
+}
+
 carousel {
   width: 100%;
   height: 100%;

@@ -6,23 +6,7 @@
       <base-search></base-search>
       <NuxtLayout name="categories" :type-layout="true">
         <template #header>
-          <header
-            class="for-you__header block-header-style block-header-img-style"
-          >
-            <nav class="for-you__header-nav">
-              <NuxtLink to="/">
-                <base-button class="icon-arrow-back">
-                <span><img src="/public/icons/arrow-back-icon.svg" /></span>
-              </base-button>
-              </NuxtLink>
-              <h1 class="text-title-style">Категории</h1> <!-- todo: в будущем подумать над переносом в компонент (header) -->
-            </nav>
-            <!-- <NuxtLink>
-              <base-button class="icon-search">
-                <img src="/public/icons/search-icon.svg"
-              </base-button>
-            </NuxtLink> -->
-          </header>
+          <header-block name="Категории" link-back="/"></header-block>
         </template>
       </NuxtLayout>
     </div>

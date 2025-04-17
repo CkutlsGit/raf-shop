@@ -22,7 +22,17 @@ declare global {
     name: string,
     iconUrl: string,
     isNew: boolean,
-    sub: Array // todo: в будущем интерфейс
+  }
+  interface ISubCategories {
+    id: string,
+    name: string,
+    description: string,
+    products: IProduct[]
+  }
+  interface ICategoriesFull extends ICategories {
+    description: string,
+    products: IProduct[],
+    subCategories: ISubCategories[]
   }
   interface IProduct {
     categoryName: string,

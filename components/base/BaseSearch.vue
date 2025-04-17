@@ -16,7 +16,7 @@
   width: 100%;
   border: none;
   border-radius: var(--size-base);
-  margin: var(--size-xs) 0;
+  margin-top: var(--size-xs);
   padding: var(--size-base) 50px var(--size-base) var(--size-base);
   background: var(--bg-color-main);
   color: var(--text-color-main);
