@@ -36,14 +36,14 @@ declare global {
   }
   interface IProduct {
     categoryName: string,
-    discountPercent: number,
+    discountPercent?: number,
     id: string,
     imgUrl: string,
     inStock: boolean,
     isNew: boolean,
     isPopular: boolean,
     name: string,
-    originalPrice: number,
+    originalPrice?: number,
     price: number
   }
   interface IStatus {

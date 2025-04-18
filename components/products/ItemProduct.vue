@@ -39,9 +39,10 @@ const cutDescriptionText = (categoryName: string): string => {
         :configStatus="newStatus"
       ></status-item-status>
       <status-item-status
+        v-if="product.discountPercent"
         class="product-status-sale"
         :configStatus="{
-          titleStatus: `Скидка ${product.discountPercent.toFixed(0)}%`,
+          titleStatus: `Скидка ${product.discountPercent?.toFixed(0)}%`,
           iconSrc: `/icons/note-icon.svg`,
           status: 'sale',
           productStatus: true,
@@ -56,7 +57,10 @@ const cutDescriptionText = (categoryName: string): string => {
     </div>
     <footer class="product-item__price">
       <h2 class="text-title-style">{{ product.price }} ₽</h2>
-      <h3 class="text-subtitle-style text-color-gray">
+      <h3
+        v-if="product.originalPrice"
+        class="text-subtitle-style text-color-gray"
+      >
         {{ product.originalPrice }} ₽
       </h3>
     </footer>
