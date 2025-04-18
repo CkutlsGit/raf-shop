@@ -34,14 +34,7 @@ const props = defineProps<{
       class="categories-subcategories__submain block-style"
     >
     <div v-if="subCategory.products.length > 0">
-      <header class="for-you__header block-header-style block-header-img-style">
-        <h1 class="text-title-style">{{ subCategory.name }}</h1>
-        <NuxtLink>
-          <base-button class="icon-arrow">
-            <span><img src="/public/icons/arrow-icon.svg" /></span>
-          </base-button>
-        </NuxtLink>
-      </header>
+      <header-block-forward-arrow :name="subCategory.name" link-forward="/"></header-block-forward-arrow>
       <ul
         class="products__content block-content-style"
         v-if="subCategory.products"

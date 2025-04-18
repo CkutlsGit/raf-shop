@@ -10,30 +10,14 @@
       <article class="main-page__categories block-style">
         <NuxtLayout name="categories" :type-layout="false">
           <template #header>
-            <header class="categories__header block-header-style">
-              <h1 class="text-title-style">Категории</h1>
-              <NuxtLink to="/categories">
-                <base-button class="icon-arrow">
-                  <span><img src="/public/icons/arrow-icon.svg" /></span>
-                </base-button>
-              </NuxtLink>
-            </header>
+            <header-block-forward-arrow name="Категории" link-forward="/categories"></header-block-forward-arrow>
           </template>
         </NuxtLayout>
       </article>
       <footer class="main-page__for-you block-style">
         <NuxtLayout name="products" :type-layout="false">
           <template #header>
-            <header
-              class="for-you__header block-header-style block-header-img-style"
-            >
-              <h1 class="text-title-style">Ваша подборка</h1>
-              <NuxtLink to="/for-you">
-                <base-button class="icon-arrow">
-                  <span><img src="/public/icons/arrow-icon.svg" /></span>
-                </base-button>
-              </NuxtLink>
-            </header>
+            <header-block-forward-arrow name="Ваша подборка" link-forward="/for-you"></header-block-forward-arrow>
           </template>
         </NuxtLayout>
       </footer>
