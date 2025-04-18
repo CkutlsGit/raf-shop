@@ -82,6 +82,7 @@ const cutDescriptionText = (categoryName: string): string => {
 .product-item__img img {
   width: 100%;
   height: 100%;
+  min-height: 175px;
 }
 
 .product-status-sale {
