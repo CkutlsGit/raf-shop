@@ -15,7 +15,8 @@ const props = defineProps<{
   <NuxtLink :to="`/categories/${ categories.id }`">
     <li class="category-item item">
     <header class="category-item__img item__img">
-      <img :src="categories.iconUrl" />
+      <img v-if="!categories.iconUrl" src="/assets/img/default-img.png">
+      <img v-else :src="categories.iconUrl" />
       <status-item-status
         v-if="categories.isNew"
         class="category-status"
