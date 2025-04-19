@@ -34,16 +34,17 @@ const props = defineProps<{
       class="categories-subcategories__submain block-style"
     >
     <div v-if="subCategory.products.length > 0">
-      <header-block-forward-arrow :name="subCategory.name" link-forward="/"></header-block-forward-arrow>
+      <header-block-forward-arrow :name="subCategory.name" :link-forward="`/sub/${ subCategory.id }?category=${ dataCategory.id }`"></header-block-forward-arrow>
       <ul
         class="products__content block-content-style"
         v-if="subCategory.products"
       >
+      <template v-for="(product, index) in subCategory.products" :key="product.id">
         <products-item-product
-          v-for="product in subCategory.products"
-          :key="product.id"
+          v-if="index < 2"
           :product="product"
         ></products-item-product>
+      </template>
       </ul>
     </div>
     </article>
