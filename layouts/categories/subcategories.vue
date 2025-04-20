@@ -59,8 +59,4 @@ const props = defineProps<{
 .products__content {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
-
-.amount-text-style {
-  margin-left: var(--size-xs);
-}
 </style>

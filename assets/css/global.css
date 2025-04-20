@@ -57,6 +57,10 @@ ul {
   font-weight: 600;
 }
 
+.amount-text-style {
+  margin-left: var(--size-xs);
+}
+
 .block-style {
   width: 100%;
   background: var(--bg-color-main);
