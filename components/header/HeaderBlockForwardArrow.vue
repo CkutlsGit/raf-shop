@@ -7,7 +7,10 @@ const props = defineProps<{
 
 <template #header>
   <header class="block-header-style">
-    <h1 class="text-title-style">{{ name }}</h1>
+    <nav>
+      <h1 class="text-title-style">{{ name }}</h1>
+      <slot name="amount"></slot>
+    </nav>
     <NuxtLink :to="linkForward">
       <base-button class="icon-arrow">
         <span><img src="/public/icons/arrow-icon.svg" /></span>
@@ -17,5 +20,12 @@ const props = defineProps<{
 </template>
 
 <style scoped>
+header nav {
+  display: flex;
+}
 
+nav h2 {
+  font-size: 14px;
+  margin-left: 5px;
+}
 </style>

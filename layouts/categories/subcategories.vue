@@ -34,7 +34,11 @@ const props = defineProps<{
       class="categories-subcategories__submain block-style"
     >
     <div v-if="subCategory.products.length > 0">
-      <header-block-forward-arrow :name="subCategory.name" :link-forward="`/sub/${ subCategory.id }?category=${ dataCategory.id }`"></header-block-forward-arrow>
+      <header-block-forward-arrow :name="subCategory.name" :link-forward="`/sub/${ subCategory.id }?category=${ dataCategory.id }`">
+        <template #amount>
+          <h2 class="text-subtitle--bold-style amount-text-style">{{ subCategory.products.length }}</h2>
+        </template>
+      </header-block-forward-arrow>
       <ul
         class="products__content block-content-style"
         v-if="subCategory.products"
@@ -54,5 +58,9 @@ const props = defineProps<{
 <style scoped>
 .products__content {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.amount-text-style {
+  margin-left: var(--size-xs);
 }
 </style>
