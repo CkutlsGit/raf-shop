@@ -46,6 +46,19 @@ declare global {
     originalPrice?: number,
     price: number
   }
+  interface IProductCard {
+    id: string,
+    name: string,
+    description: string,
+    categoryId: string,
+    imgUrls: Array<string>,
+    price: number,
+    originalPrice?: number,
+    discountPercent?: number,
+    inStock: false,
+    rating: number,
+    reviews: Array<any>
+  }
   interface IStatus {
     titleStatus: string,
     iconSrc: string,

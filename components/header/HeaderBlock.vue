@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const props = defineProps<{
   linkBack: string,
-  name: string | undefined
+  name: string | any
 }>()
 </script>
 

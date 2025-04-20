@@ -26,7 +26,8 @@ const cutDescriptionText = (categoryName: string): string => {
 
 <template>
   <li class="product-item item">
-    <header class="product-item__img item__img">
+    <NuxtLink :to="`/product/${ product.id }?category=${ product.categoryName }`">
+      <header class="product-item__img item__img">
       <img :src="product.imgUrl" />
       <status-item-status
         class="product-status"
@@ -64,6 +65,7 @@ const cutDescriptionText = (categoryName: string): string => {
         {{ product.originalPrice }} ₽
       </h3>
     </footer>
+    </NuxtLink>
   </li>
 </template>
 
@@ -72,6 +74,7 @@ const cutDescriptionText = (categoryName: string): string => {
   position: absolute;
   top: 5%;
   left: 5%;
+  color: var(--text-color-main);
 }
 
 .product-status + .product-status {
@@ -93,6 +96,11 @@ const cutDescriptionText = (categoryName: string): string => {
   position: absolute;
   bottom: 6%;
   left: 5%;
+  color: var(--text-color-main);
+}
+
+.product-item__text h2 {
+  color: var(--text-color-main);
 }
 
 .product-item__price {
