@@ -50,12 +50,12 @@ const cutDescriptionText = (categoryName: string): string => {
         }"
       ></status-item-status>
     </header>
-    <div class="product-item__text">
+    <article class="product-item__text">
       <h2 class="text-title-style">{{ product.name }}</h2>
       <p class="text-color-gray text-subtitle-style">
         {{ cutDescriptionText(product.categoryName) }}
       </p>
-    </div>
+    </article>
     <footer class="product-item__price">
       <h2 class="text-title-style">{{ product.price }} ₽</h2>
       <h3
