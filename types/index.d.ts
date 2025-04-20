@@ -6,6 +6,14 @@ declare global {
       WebApp: any
     }
   }
+  interface IBase {
+    name: string,
+    id: string
+  }
+  interface IBaseCategory {
+    description: string,
+    products: IProduct[]
+  }
   interface IUser {
     name: string
     username: string
@@ -17,38 +25,25 @@ declare global {
     imgUrl: string
     link: string
   }
-  interface ICategories {
-    id: string,
-    name: string,
+  interface ICategories extends IBase {
     iconUrl: string,
     isNew: boolean,
   }
-  interface ISubCategories {
-    id: string,
-    name: string,
-    description: string,
-    products: IProduct[]
-  }
-  interface ICategoriesFull extends ICategories {
-    description: string,
-    products: IProduct[],
+  interface ISubCategories extends IBase, IBaseCategory {}
+  interface ICategoriesFull extends ICategories, IBaseCategory {
     subCategories: ISubCategories[]
   }
-  interface IProduct {
+  interface IProduct extends IBase {
     categoryName: string,
     discountPercent?: number,
-    id: string,
     imgUrl: string,
     inStock: boolean,
     isNew: boolean,
     isPopular: boolean,
-    name: string,
     originalPrice?: number,
     price: number
   }
-  interface IProductCard {
-    id: string,
-    name: string,
+  interface IProductCard extends IBase {
     description: string,
     categoryId: string,
     imgUrls: Array<string>,
@@ -59,12 +54,10 @@ declare global {
     rating: number,
     reviews: IReview[]
   }
-  interface IReview {
+  interface IReview extends IBase {
     avatarUrl: string,
     comment: string,
     createdAtUtc: string,
-    id: string,
-    name: string,
     rating: number
   }
   interface IStatus {
