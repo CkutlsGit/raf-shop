@@ -5,7 +5,7 @@ const props = defineProps<{
 </script>
 
 <template>
-  <BaseLoader v-if="!dataCategory"></BaseLoader>
+  <base-loader v-if="!dataCategory"></base-loader>
   <div v-else>
     <article
       v-if="dataCategory.products.length > 0"
