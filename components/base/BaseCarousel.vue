@@ -1,26 +1,8 @@
 <script setup lang="ts">
-interface IApiBanner {
-  banners: IBanner[]
-}
-
-const runTimeConfig = useRuntimeConfig()
-let banners = useState<IBanner[]>("banners", () => [])
-
-onMounted(async () => {
-  if (!banners.value.length) {
-    try {
-      const response = await $fetch<IApiBanner>(
-        `${runTimeConfig.public.backendUrl}/api/v1/banners`,
-        {
-          method: "GET",
-        }
-      )
-      banners.value = response.banners
-    } catch (error) {
-      console.error(error)
-    }
-  }
-})
+const props = defineProps<{
+  img: any,
+  typeProduct?: boolean
+}>()
 
 const carouselConfig = {
   itemToShow: 1,
@@ -36,8 +18,9 @@ const urlTransfer = (url: string): void => {
 
 <template>
   <carousel class="carousel" v-bind="carouselConfig">
-    <slide v-for="slide of banners" :key="slide.id">
-      <img :src="slide.imgUrl" @click="urlTransfer(slide.link)" />
+    <slide v-for="(slide, index) of img" :key="index">
+      <img v-if="!typeProduct" :src="slide.imgUrl" @click="urlTransfer(slide.link)" />
+      <img class="product-img" v-else :src="slide">
     </slide>
   </carousel>
 </template>
@@ -57,5 +40,9 @@ img {
   height: 100%;
   border-radius: var(--size-base);
   cursor: pointer;
+}
+
+.product-img {
+  border-bottom: 12px solid var(--bg-color-main);
 }
 </style>

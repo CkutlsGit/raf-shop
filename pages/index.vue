@@ -1,11 +1,34 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+interface IApiBanner {
+  banners: IBanner[]
+}
+
+const runTimeConfig = useRuntimeConfig()
+let banners = useState<IBanner[]>("banners", () => [])
+
+onMounted(async () => {
+  if (!banners.value.length) {
+    try {
+      const response = await $fetch<IApiBanner>(
+        `${runTimeConfig.public.backendUrl}/api/v1/banners`,
+        {
+          method: "GET",
+        }
+      )
+      banners.value = response.banners
+    } catch (error) {
+      console.error(error)
+    }
+  }
+})
+</script>
 
 <template>
   <section class="main-page">
     <div class="main-page__content">
       <header class="main-page__header">
         <base-search></base-search>
-        <base-carousel></base-carousel>
+        <base-carousel :img="banners"></base-carousel>
       </header>
       <article class="main-page__categories block-style">
         <NuxtLayout name="categories" :type-layout="false">
