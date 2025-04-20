@@ -57,7 +57,15 @@ declare global {
     discountPercent?: number,
     inStock: false,
     rating: number,
-    reviews: Array<any>
+    reviews: IReview[]
+  }
+  interface IReview {
+    avatarUrl: string,
+    comment: string,
+    createdAtUtc: string,
+    id: string,
+    name: string,
+    rating: number
   }
   interface IStatus {
     titleStatus: string,
