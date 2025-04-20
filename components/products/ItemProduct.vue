@@ -26,45 +26,45 @@ const cutDescriptionText = (categoryName: string): string => {
 
 <template>
   <li class="product-item item">
-    <NuxtLink :to="`/product/${ product.id }?category=${ product.categoryName }`">
+    <NuxtLink :to="`/product/${product.id}?category=${product.categoryName}`">
       <header class="product-item__img item__img">
-      <img :src="product.imgUrl" />
-      <status-item-status
-        class="product-status"
-        v-if="product.isPopular"
-        :configStatus="popularStatus"
-      ></status-item-status>
-      <status-item-status
-        class="product-status"
-        v-if="product.isNew"
-        :configStatus="newStatus"
-      ></status-item-status>
-      <status-item-status
-        v-if="product.discountPercent"
-        class="product-status-sale"
-        :configStatus="{
-          titleStatus: `Скидка ${product.discountPercent?.toFixed(0)}%`,
-          iconSrc: `/icons/note-icon.svg`,
-          status: 'sale',
-          productStatus: true,
-        }"
-      ></status-item-status>
-    </header>
-    <article class="product-item__text">
-      <h2 class="text-title-style">{{ product.name }}</h2>
-      <p class="text-color-gray text-subtitle-style">
-        {{ cutDescriptionText(product.categoryName) }}
-      </p>
-    </article>
-    <footer class="product-item__price">
-      <h2 class="text-title-style">{{ product.price }} ₽</h2>
-      <h3
-        v-if="product.originalPrice"
-        class="text-subtitle-style text-color-gray"
-      >
-        {{ product.originalPrice }} ₽
-      </h3>
-    </footer>
+        <img :src="product.imgUrl" />
+        <status-item-status
+          class="product-status"
+          v-if="product.isPopular"
+          :configStatus="popularStatus"
+        ></status-item-status>
+        <status-item-status
+          class="product-status"
+          v-if="product.isNew"
+          :configStatus="newStatus"
+        ></status-item-status>
+        <status-item-status
+          v-if="product.discountPercent"
+          class="product-status-sale"
+          :configStatus="{
+            titleStatus: `Скидка ${product.discountPercent?.toFixed(0)}%`,
+            iconSrc: `/icons/note-icon.svg`,
+            status: 'sale',
+            productStatus: true,
+          }"
+        ></status-item-status>
+      </header>
+      <article class="product-item__text">
+        <h2 class="text-title-style">{{ product.name }}</h2>
+        <p class="text-color-gray text-subtitle-style">
+          {{ cutDescriptionText(product.categoryName) }}
+        </p>
+      </article>
+      <footer class="product-item__price">
+        <h2 class="text-title-style">{{ product.price }} ₽</h2>
+        <h3
+          v-if="product.originalPrice"
+          class="text-subtitle-style text-color-gray"
+        >
+          {{ product.originalPrice }} ₽
+        </h3>
+      </footer>
     </NuxtLink>
   </li>
 </template>

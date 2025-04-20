@@ -33,24 +33,32 @@ const props = defineProps<{
       :key="subCategory.id"
       class="categories-subcategories__submain block-style"
     >
-    <div v-if="subCategory.products.length > 0">
-      <header-block-forward-arrow :name="subCategory.name" :link-forward="`/sub/${ subCategory.id }?category=${ dataCategory.id }`">
-        <template #amount>
-          <h2 class="text-subtitle--bold-style amount-text-style">{{ subCategory.products.length }}</h2>
-        </template>
-      </header-block-forward-arrow>
-      <ul
-        class="products__content block-content-style"
-        v-if="subCategory.products"
-      >
-      <template v-for="(product, index) in subCategory.products" :key="product.id">
-        <products-item-product
-          v-if="index < 2"
-          :product="product"
-        ></products-item-product>
-      </template>
-      </ul>
-    </div>
+      <div v-if="subCategory.products.length > 0">
+        <header-block-forward-arrow
+          :name="subCategory.name"
+          :link-forward="`/sub/${subCategory.id}?category=${dataCategory.id}`"
+        >
+          <template #amount>
+            <h2 class="text-subtitle--bold-style amount-text-style">
+              {{ subCategory.products.length }}
+            </h2>
+          </template>
+        </header-block-forward-arrow>
+        <ul
+          class="products__content block-content-style"
+          v-if="subCategory.products"
+        >
+          <template
+            v-for="(product, index) in subCategory.products"
+            :key="product.id"
+          >
+            <products-item-product
+              v-if="index < 2"
+              :product="product"
+            ></products-item-product>
+          </template>
+        </ul>
+      </div>
     </article>
   </div>
 </template>

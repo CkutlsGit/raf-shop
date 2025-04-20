@@ -32,7 +32,10 @@ onMounted(async () => {
   <slot name="header"></slot>
   <ul
     class="categories__content block-content-style"
-    :class="{ 'split-block-style': typeLayout, 'categories__content--padding-top': typeLayout }"
+    :class="{
+      'split-block-style': typeLayout,
+      'categories__content--padding-top': typeLayout,
+    }"
   >
     <template v-for="(category, index) in categories" :key="category.id">
       <category-item-category
@@ -49,6 +52,6 @@ onMounted(async () => {
 }
 
 .categories__content--padding-top {
-  padding-top: 12px !important;
+  padding-top: var(--size-lg) !important;
 }
 </style>

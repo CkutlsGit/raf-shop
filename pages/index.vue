@@ -33,14 +33,20 @@ onMounted(async () => {
       <article class="main-page__categories block-style">
         <NuxtLayout name="categories" :type-layout="false">
           <template #header>
-            <header-block-forward-arrow name="Категории" link-forward="/categories"></header-block-forward-arrow>
+            <header-block-forward-arrow
+              name="Категории"
+              link-forward="/categories"
+            ></header-block-forward-arrow>
           </template>
         </NuxtLayout>
       </article>
       <footer class="main-page__for-you block-style">
         <NuxtLayout name="products" :type-layout="false">
           <template #header>
-            <header-block-forward-arrow name="Ваша подборка" link-forward="/for-you"></header-block-forward-arrow>
+            <header-block-forward-arrow
+              name="Ваша подборка"
+              link-forward="/for-you"
+            ></header-block-forward-arrow>
           </template>
         </NuxtLayout>
       </footer>

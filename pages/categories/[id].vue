@@ -6,13 +6,15 @@ const dataCategory = ref<ICategoriesFull>()
 
 onMounted(async () => {
   try {
-    const response = await $fetch<ICategoriesFull>(`${ runTimeConfig.public.backendUrl }/api/v1/products/${ route.params.id }`, {
-      method: 'GET'
-    })
+    const response = await $fetch<ICategoriesFull>(
+      `${runTimeConfig.public.backendUrl}/api/v1/products/${route.params.id}`,
+      {
+        method: "GET",
+      }
+    )
 
     dataCategory.value = response
-  }
-  catch(error) {
+  } catch (error) {
     console.error(error)
   }
 })
@@ -21,11 +23,12 @@ onMounted(async () => {
 <template>
   <section class="categories-list">
     <div class="categories-list__content">
-      <NuxtLayout name="categories-subcategories" :data-category="dataCategory"></NuxtLayout>
+      <NuxtLayout
+        name="categories-subcategories"
+        :data-category="dataCategory"
+      ></NuxtLayout>
     </div>
   </section>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

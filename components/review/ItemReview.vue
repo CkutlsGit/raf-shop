@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const props = defineProps<{
-  review: IReview,
+  review: IReview
   last: boolean
 }>()
 </script>
@@ -17,7 +17,7 @@ const props = defineProps<{
         <img src="@/assets/img/star-icon.svg" />
       </div>
     </header>
-    <article class="review__description" :class="{ 'review__end': last }">
+    <article class="review__description" :class="{ review__end: last }">
       <p>
         {{ review.comment }}
       </p>
@@ -49,7 +49,7 @@ const props = defineProps<{
 
 .review__user h2 {
   font-size: 5vw;
-  margin-left: 8px;
+  margin-left: var(--size-small);
 }
 
 .review__rating {
@@ -72,8 +72,8 @@ const props = defineProps<{
 
 .review__footer {
   width: 100%;
-  padding: 0 16px;
-  margin: 12px 0;
+  padding: 0 var(--size-base);
+  margin: var(--size-lg) 0;
 }
 
 .review__line {
@@ -84,6 +84,6 @@ const props = defineProps<{
 }
 
 .review__end {
-  padding-bottom: 12px;
+  padding-bottom: var(--size-lg);
 }
 </style>

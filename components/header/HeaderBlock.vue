@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const props = defineProps<{
-  linkBack: string,
+  linkBack: string
   name: string | any
 }>()
 </script>
@@ -23,11 +23,5 @@ const props = defineProps<{
   background: var(--bg-color-main);
   border-radius: var(--size-base);
   margin: var(--size-xs) 0;
-}
-
-.header-block__nav {
-  display: flex;
-  align-items: center;
-  gap: 0 12px;
 }
 </style>

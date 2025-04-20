@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const props = defineProps<{
-  img: any,
+  img: any
   typeProduct?: boolean
 }>()
 
@@ -19,8 +19,12 @@ const urlTransfer = (url: string): void => {
 <template>
   <carousel class="carousel" v-bind="carouselConfig">
     <slide v-for="(slide, index) of img" :key="index">
-      <img v-if="!typeProduct" :src="slide.imgUrl" @click="urlTransfer(slide.link)" />
-      <img class="product-img" v-else :src="slide">
+      <img
+        v-if="!typeProduct"
+        :src="slide.imgUrl"
+        @click="urlTransfer(slide.link)"
+      />
+      <img class="product-img" v-else :src="slide" />
     </slide>
   </carousel>
 </template>
@@ -43,6 +47,6 @@ img {
 }
 
 .product-img {
-  border-bottom: 12px solid var(--bg-color-main);
+  border-bottom: var(--size-lg) solid var(--bg-color-main);
 }
 </style>

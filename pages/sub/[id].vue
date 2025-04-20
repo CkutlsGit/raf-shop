@@ -31,17 +31,14 @@ onMounted(async () => {
         :link-back="`/categories/${route.query.category}`"
       ></header-block>
       <article class="sub-categories__products">
-        <ul
-        class="products__content block-content-style split-block-style" 
-      >
-        <products-item-product
-          v-for="product in dataCategory.products"
-          :key="product.id"
-          :product="product"
-        ></products-item-product>
-      </ul>
+        <ul class="products__content block-content-style split-block-style">
+          <products-item-product
+            v-for="product in dataCategory.products"
+            :key="product.id"
+            :product="product"
+          ></products-item-product>
+        </ul>
       </article>
-      <!-- todo: подумать над переносом в компонент -->
     </div>
   </section>
 </template>

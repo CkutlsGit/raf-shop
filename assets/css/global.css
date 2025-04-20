@@ -87,10 +87,16 @@ ul {
   cursor: pointer;
 }
 
+.header-block__nav {
+  display: flex;
+  align-items: center;
+  gap: 0 var(--size-lg);
+}
+
 .block-content-style {
   display: grid;
   padding: 0 var(--size-small) var(--size-small) var(--size-small);
-  gap: 8px;
+  gap: var(--size-small);
 }
 
 .item {

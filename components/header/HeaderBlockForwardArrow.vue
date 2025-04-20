@@ -1,13 +1,13 @@
 <script setup lang="ts">
 const props = defineProps<{
-  name: string | undefined,
+  name: string | undefined
   linkForward: string
 }>()
 </script>
 
 <template #header>
   <header class="block-header-style">
-    <nav>
+    <nav class="block-header--text">
       <h1 class="text-title-style">{{ name }}</h1>
       <slot name="amount"></slot>
     </nav>
@@ -20,11 +20,11 @@ const props = defineProps<{
 </template>
 
 <style scoped>
-header nav {
+.block-header--text {
   display: flex;
 }
 
-nav h2 {
+.block-header--text h2 {
   font-size: 14px;
   margin-left: 5px;
 }

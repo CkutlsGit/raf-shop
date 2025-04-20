@@ -13,16 +13,4 @@
   </section>
 </template>
 
-<style scoped>
-.for-you__header {
-  background: var(--bg-color-main);
-  border-radius: var(--size-base);
-  margin-bottom: var(--size-xs);
-}
-
-.for-you__header-nav {
-  display: flex;
-  align-items: center;
-  gap: 0 12px;
-}
-</style>
+<style scoped></style>

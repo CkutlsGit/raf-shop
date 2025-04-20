@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const props = defineProps<{
-  linkBack: string,
+  linkBack: string
   name: string | undefined
 }>()
 </script>
@@ -18,10 +18,4 @@ const props = defineProps<{
   </header>
 </template>
 
-<style scoped>
-.header-block__nav {
-  display: flex;
-  align-items: center;
-  gap: 0 12px;
-}
-</style>
+<style scoped></style>
