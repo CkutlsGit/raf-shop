@@ -147,7 +147,7 @@ onMounted(async () => {
 }
 
 .rating h2 {
-  font-size: 6vw;
+  font-size: 5vw;
   margin-right: var(--size-xs);
 }
 
