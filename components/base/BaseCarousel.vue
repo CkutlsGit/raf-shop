@@ -1,15 +1,12 @@
 <script setup lang="ts">
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Autoplay } from 'swiper/modules'
+import 'swiper/css';
+
 const props = defineProps<{
   img: any
   typeProduct?: boolean
 }>()
-
-const carouselConfig = {
-  itemToShow: 1,
-  autoplay: 5000,
-  wrapAround: true,
-  transition: 500,
-}
 
 const urlTransfer = (url: string): void => {
   window.open(url, "blank")
@@ -17,16 +14,23 @@ const urlTransfer = (url: string): void => {
 </script>
 
 <template>
-  <carousel class="carousel" v-bind="carouselConfig">
-    <slide v-for="(slide, index) of img" :key="index">
-      <img
-        v-if="!typeProduct"
-        :src="slide.imgUrl"
-        @click="urlTransfer(slide.link)"
-      />
-      <img class="product-img" v-else :src="slide" />
-    </slide>
-  </carousel>
+  <swiper
+  class="carousel"
+  :centered-slides="true"
+  :modules="[Autoplay]"
+  :slides-per-view="1"
+  :autoplay="{
+    delay: 2500,
+    disableOnInteraction: false,
+    
+  }"
+  :space-between="30"
+  >
+    <swiper-slide v-for="(slide, index) of img" :key="index" @click="urlTransfer(slide.link)">
+      <img v-if="!typeProduct" :src="slide.imgUrl">
+      <img :src="slide" class="product-img" v-else>
+    </swiper-slide>
+  </swiper>
 </template>
 
 <style scoped>
@@ -34,9 +38,13 @@ const urlTransfer = (url: string): void => {
   margin-top: var(--size-xs);
 }
 
-carousel {
+.carousel {
   width: 100%;
   height: 100%;
+}
+
+.swiper-slide {
+  height: unset !important;
 }
 
 img {
