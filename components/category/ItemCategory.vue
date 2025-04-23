@@ -41,7 +41,7 @@ const props = defineProps<{
 
 .category-item h2 {
   margin: var(--size-xs) auto 0 auto;
-  word-wrap: break-word;
+  overflow: hidden;
   color: var(--text-color-main);
   font-weight: 500;
 }
