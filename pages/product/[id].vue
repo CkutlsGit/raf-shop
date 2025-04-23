@@ -99,6 +99,9 @@ onMounted(async () => {
 <style scoped>
 .product__img img {
   border-radius: var(--size-base);
+}
+
+.carousel-product-card img {
   border-bottom: var(--size-lg) solid var(--bg-color-main);
 }
 
