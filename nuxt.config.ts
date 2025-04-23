@@ -18,7 +18,7 @@ export default defineNuxtConfig({
       backendUrl: 'https://tgshop.chasman.engineer'
     }
   },
-  modules: ['@pinia/nuxt', '@nuxtjs/google-fonts', 'vue3-carousel-nuxt'],
+  modules: ['@pinia/nuxt', '@nuxtjs/google-fonts'],
   css: ['~/assets/css/global.css'],
   googleFonts: {
     families: {
