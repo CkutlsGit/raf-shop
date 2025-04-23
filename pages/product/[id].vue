@@ -11,7 +11,6 @@ onMounted(async () => {
     )
 
     productData.value = response
-    console.log(productData.value)
   } catch (error) {
     console.error(error)
   }
