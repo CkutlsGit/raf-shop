@@ -3,7 +3,8 @@ const runTimeConfig = useRuntimeConfig()
 const products = useState<IProduct[]>("products", () => [])
 
 const props = defineProps<{
-  typeLayout: boolean
+  typeLayout: boolean,
+  productPageId?: string
 }>()
 
 onMounted(async () => {
@@ -30,11 +31,12 @@ onMounted(async () => {
     class="products__content block-content-style"
     :class="{ 'split-block-style': typeLayout }"
   >
+  <template v-for="product in products" :key="product.id">
     <products-item-product
-      v-for="product in products"
-      :key="product.id"
+    v-if="product.id !== productPageId"
       :product="product"
     ></products-item-product>
+  </template>
   </ul>
 </template>
 
