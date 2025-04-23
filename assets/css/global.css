@@ -146,3 +146,19 @@ ul {
 .sale-status-bg {
   background: linear-gradient(90deg, #EC3A63 0%, #E35F7D 100%);
 }
+
+.carousel-style {
+  margin-top: var(--size-xs);
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-style .swiper-slide {
+  height: unset !important;
+}
+
+.carousel-style .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--size-base);
+}

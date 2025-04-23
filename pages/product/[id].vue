@@ -28,12 +28,11 @@ onMounted(async () => {
       ></header-block>
       <article class="product__info">
         <header class="product__img">
-          <base-carousel
+          <base-carousel-pagination
             class="carousel-product-card"
             v-if="productData.imgUrls.length >= 2"
             :img="productData.imgUrls"
-            :type-product="true"
-          ></base-carousel>
+          ></base-carousel-pagination>
           <img class="item__img" v-else :src="productData.imgUrls[0]" />
         </header>
         <article class="product__text-info block-style block-padding">
