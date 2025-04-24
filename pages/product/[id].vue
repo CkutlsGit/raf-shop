@@ -64,7 +64,7 @@ onMounted(async () => {
         <div class="product__foter--reviews block-style">
           <header-block-forward-arrow
             name="Отзывы"
-            :link-forward="`/categories`"
+            :link-forward="`/product/reviews/${ productData.id }?category=${ route.query.category }`"
           >
             <template #amount>
               <h2 class="text-subtitle--bold-style amount-text-style">
@@ -72,14 +72,15 @@ onMounted(async () => {
               </h2>
             </template>
           </header-block-forward-arrow>
-          <ul class="product__reviews">
+          <template v-for="(review, index) in productData.reviews" :key="review.id">
+            <ul class="product__reviews">
             <review-item-review
-              v-for="(review, index) in productData.reviews"
-              :key="review.id"
+              v-if="index < 3"
               :review="review"
-              :last="index === productData.reviews.length - 1"
+              :last="index === productData.reviews.length - 3"
             ></review-item-review>
           </ul>
+          </template>
         </div>
         <div class="product__foter--for-you block-style">
           <NuxtLayout name="products" :type-layout="false" :product-page-id="productData.id">
@@ -140,16 +141,6 @@ onMounted(async () => {
   font-size: 5vw;
   text-decoration: line-through;
   margin-left: var(--size-xs);
-}
-
-.rating {
-  display: flex;
-  align-items: center;
-}
-
-.rating h2 {
-  font-size: 5vw;
-  margin-right: var(--size-xs);
 }
 
 .product__text-description p {

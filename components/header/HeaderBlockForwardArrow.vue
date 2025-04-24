@@ -20,12 +20,5 @@ const props = defineProps<{
 </template>
 
 <style scoped>
-.block-header--text {
-  display: flex;
-}
 
-.block-header--text h2 {
-  font-size: 14px;
-  margin-left: 5px;
-}
 </style>
