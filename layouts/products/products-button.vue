@@ -27,7 +27,7 @@ const changedAmountProduct = (type: string): any => {
         <button
           @click="cartClick = !cartClick"
           v-if="!cartClick"
-          class="cart-btn"
+          class="cart-btn button-bg-default"
         >
           В корзину
         </button>
@@ -41,7 +41,9 @@ const changedAmountProduct = (type: string): any => {
           </button>
         </div>
       </article>
-      <button v-else class="instock-btn">Нет в наличии</button>
+      <button v-else class="instock-btn button-bg-default">
+        Нет в наличии
+      </button>
     </div>
   </section>
 </template>
@@ -49,12 +51,16 @@ const changedAmountProduct = (type: string): any => {
 <style scoped>
 .product__buttons {
   width: 100%;
-  background: rgba(249, 249, 255, 0.05);
+  background: var(--bg-color-main-opacity);
   backdrop-filter: blur(6px);
   border-radius: var(--size-base) var(--size-base) 0 0;
   position: fixed;
   z-index: 10;
   bottom: 0;
+}
+
+.button-bg-default {
+  background: var(--bg-color-main-opacity);
 }
 
 .product__buttons--main {
@@ -80,10 +86,6 @@ const changedAmountProduct = (type: string): any => {
   background: var(--bg-color-button-submit);
 }
 
-.cart-btn {
-  background: rgba(249, 249, 255, 0.05);
-}
-
 .product__buttons--cart {
   display: flex;
   align-items: center;
@@ -92,7 +94,7 @@ const changedAmountProduct = (type: string): any => {
 
 .product__buttons--cart button {
   border-radius: 0;
-  background: rgba(249, 249, 255, 0.05);
+  background: var(--bg-color-main-opacity);
 }
 
 .switch-btn-del {
@@ -101,9 +103,5 @@ const changedAmountProduct = (type: string): any => {
 
 .switch-btn-add {
   border-radius: 0 var(--size-base) var(--size-base) 0 !important;
-}
-
-.instock-btn {
-  background: rgba(249, 249, 255, 0.05);
 }
 </style>
