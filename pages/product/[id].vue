@@ -95,17 +95,7 @@ onMounted(async () => {
       </footer>
     </div>
   </section>
-  <section v-if="productData" class="product__buttons">
-        <div class="product__buttons--content">
-          <button class="buy-btn">Купить сейчас</button>
-          <div class="product__buttons--cart">
-            <button class="switch-btn-del">-</button>
-            <button class="amount-btn" disabled>1</button>
-            <button class="switch-btn-add">+</button>
-          </div>
-          <!-- <button class="instock-btn">Нет в наличии</button> -->
-        </div>
-  </section>
+  <NuxtLayout v-if="productData" name="products-button" :in-stock="productData.inStock"></NuxtLayout>
 </template>
 
 <style scoped>
@@ -156,64 +146,5 @@ onMounted(async () => {
 
 .product__text-description p {
   font-size: 5vw;
-}
-
-.product__buttons {
-  width: 100%;
-  background: rgba(249, 249, 255, 0.05);
-  backdrop-filter: blur(6px);
-  border-radius: var(--size-base) var(--size-base) 0 0;
-  position: fixed;
-  z-index: 10;
-  bottom: 0;
-}
-
-.product__buttons--content {
-  display: flex;
-  justify-content: center;
-  gap: 0 var(--size-small);
-  padding: var(--size-base);
-}
-
-.product__buttons--content button {
-  width: 100%;
-  padding: var(--size-lg) var(--size-base);
-  border-radius: var(--size-base);
-  color: var(--text-color-main);
-  font-size: 5vw;
-  font-weight: 600;
-  font-family: "Raleway", sans-serif;
-  cursor: pointer;
-}
-
-.buy-btn {
-  background: var(--bg-color-button-submit);
-}
-
-.cart-btn {
-  background: rgba(249, 249, 255, 0.05)
-}
-
-.product__buttons--cart {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-.product__buttons--cart button {
-  border-radius: 0;
-  background: rgba(249, 249, 255, 0.05)
-}
-
-.switch-btn-del {
-  border-radius: var(--size-base) 0 0 var(--size-base) !important;
-}
-
-.switch-btn-add {
-  border-radius: 0 var(--size-base) var(--size-base) 0 !important;
-}
-
-.instock-btn {
-  background: rgba(249, 249, 255, 0.05)
 }
 </style>
