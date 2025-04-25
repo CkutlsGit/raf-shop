@@ -27,6 +27,7 @@ ul {
 :root {
   --bg-color-body: #101015;
   --bg-color-main: #f9f9ff0d;
+  --bg-color-button-submit: #38AC34;
   --text-color-main: #f9f9ff;
   --text-color-green: #5bdb41;
   --size-xs: 4px;
