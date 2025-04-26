@@ -75,7 +75,7 @@ const changedAmountProduct = (type: string): any => {
   padding: var(--size-lg) var(--size-base);
   border-radius: var(--size-base);
   color: var(--text-color-main);
-  font-size: 5vw;
+  font-size: 4vw;
   font-weight: 600;
   font-family: "Raleway", sans-serif;
   font-variant-numeric: lining-nums proportional-nums;
