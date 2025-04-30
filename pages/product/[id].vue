@@ -83,7 +83,7 @@ onMounted(async () => {
           </template>
         </div>
         <div class="product__foter--for-you block-style">
-          <NuxtLayout name="products" :type-layout="false" :product-page-id="productData.id">
+          <NuxtLayout class="padding-for-buttons" name="products" :type-layout="false" :product-page-id="productData.id">
             <template #header>
               <header-block-forward-arrow
                 name="Ваша подборка"

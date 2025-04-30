@@ -29,6 +29,7 @@ onMounted(async () => {
   <slot name="header"></slot>
   <ul
     class="products__content block-content-style"
+    v-bind="$attrs"
     :class="{ 'split-block-style': typeLayout }"
   >
   <template v-for="product in products" :key="product.id">

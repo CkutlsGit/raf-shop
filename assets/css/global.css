@@ -179,3 +179,7 @@ ul {
   height: 100%;
   border-radius: var(--size-base);
 }
+
+.padding-for-buttons {
+  padding-bottom: 75px;
+}
