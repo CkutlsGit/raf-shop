@@ -95,7 +95,7 @@ onMounted(async () => {
       </footer>
     </div>
   </section>
-  <NuxtLayout v-if="productData" name="products-button" :in-stock="productData.inStock"></NuxtLayout>
+  <NuxtLayout v-if="productData" name="products-button" :in-stock="productData.inStock" :product-id="productData.id"></NuxtLayout>
 </template>
 
 <style scoped>

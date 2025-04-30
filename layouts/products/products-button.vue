@@ -1,6 +1,8 @@
 <script setup lang="ts">
+const runTimeConfig = useRuntimeConfig()
 const props = defineProps<{
-  inStock: boolean
+  inStock: boolean,
+  productId: string
 }>()
 
 const cartClick = ref<boolean>(false)
@@ -17,13 +19,34 @@ const changedAmountProduct = (type: string): any => {
       break
   }
 }
+
+const clickBuyButton = async (): Promise<void> => {
+  try {
+    const authToken = GetCookie('authtoken')
+
+    if (authToken) {
+      const response = await $fetch(`${ runTimeConfig.public.backendUrl }/api/v1/cart/${ props.productId }`, {
+      method: 'POST',
+      headers: {
+        'Authorization': authToken
+      },
+      body: JSON.stringify({ quantity: amountProduct.value })
+    })
+
+    await navigateTo('/cart')
+    }
+  }
+  catch(error) {
+    console.error(error)
+  }
+}
 </script>
 
 <template>
   <section class="product__buttons">
     <div class="product__buttons--content">
       <article class="product__buttons--main" v-if="!inStock">
-        <button class="buy-btn">Купить сейчас</button>
+        <button @click="clickBuyButton" class="buy-btn">Купить сейчас</button>
         <button
           @click="cartClick = !cartClick"
           v-if="!cartClick"
