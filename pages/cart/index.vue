@@ -1,13 +1,32 @@
-<template>
-  <div>
-    <h1>Cart</h1>
-  </div>
-</template>
+<script setup lang="ts">
+const runTimeConfig = useRuntimeConfig()
 
-<script lang="ts" setup>
+const dataCart = ref<ICart>()
 
+onMounted(async () => {
+  const authToken = GetCookie('authtoken')
+
+  if (authToken) {
+    const response = await $fetch<ICart>(`${ runTimeConfig.public.backendUrl }/api/v1/cart`, {
+    method: 'GET',
+    headers: {
+      'Authorization': authToken
+    }
+  })
+
+  dataCart.value = response
+  }
+})
 </script>
 
-<style>
+<template>
+  <section class="cart">
+    <div class="cart__content--clear block-style">
+      <HeaderBlockUnsplit name="Корзина" link-back="/"></HeaderBlockUnsplit>
+    </div>
+  </section>
+</template>
+
+<style scoped>
 
 </style>

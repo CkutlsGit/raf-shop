@@ -60,6 +60,22 @@ declare global {
     createdAtUtc: string,
     rating: number
   }
+  interface ICartProudct extends IBase {
+    imgUrl: string,
+    price: number,
+    originalPrice: number
+  }
+  interface ICartItem {
+    product: ICartProudct,
+    quantity: number,
+    totalPrice: number,
+    totalDiscount: number
+  }
+  interface ICart {
+    totalPrice: number,
+    totalDiscount: number,
+    items: ICartItem[]
+  }
   interface IStatus {
     titleStatus: string,
     iconSrc: string,
