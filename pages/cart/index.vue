@@ -37,6 +37,7 @@ onMounted(async () => {
 <style scoped>
 .cart__content--clear {
   height: 100vh;
+  margin-bottom: 0;
 }
 
 .cart__text {
