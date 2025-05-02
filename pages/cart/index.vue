@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const runTimeConfig = useRuntimeConfig()
 
-const dataCart = ref<ICart>()
+const dataCart = ref({} as ICart)
 
 onMounted(async () => {
   const authToken = GetCookie('authtoken')
@@ -15,13 +15,14 @@ onMounted(async () => {
   })
 
   dataCart.value = response
+  console.log(dataCart.value.items.length)
   }
 })
 </script>
 
 <template>
   <section class="cart">
-    <div class="cart__content--clear block-style">
+    <div v-if="dataCart?.items?.length <= 0" class="cart__content--clear block-style">
       <HeaderBlockUnsplit name="Корзина" link-back="/"></HeaderBlockUnsplit>
       <article class="cart__text">
         <h1 class="text-subtitle--bold-style">Тут пусто</h1>
@@ -29,6 +30,26 @@ onMounted(async () => {
         <NuxtLink to="/categories">
           <button>В каталог <img src="/public/icons/arrow-icon.svg"></button>
         </NuxtLink>
+      </article>
+    </div>
+    <div v-else class="cart__content">
+      <HeaderBlock name="Корзина" link-back="/">
+        <template #amount>
+          <h2 class="text-subtitle--bold-style amount-text-style">{{ dataCart.items?.length }}</h2>
+        </template>
+      </HeaderBlock>
+      <article class="cart__items block-style">
+        <ul class="cart__items--list">
+          <li>
+            <div class="item__main">
+              <img src="@/assets/img/test-img-product.png">
+              <div class="item__main--text">
+                <h2>Ключ</h2>
+                <h2>42 000 P</h2>
+              </div>
+            </div>
+          </li>
+        </ul>
       </article>
     </div>
   </section>
