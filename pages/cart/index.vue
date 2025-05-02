@@ -24,11 +24,11 @@ onMounted(async () => {
     <div class="cart__content--clear block-style">
       <HeaderBlockUnsplit name="Корзина" link-back="/"></HeaderBlockUnsplit>
       <article class="cart__text">
-        <h1>Тут пусто</h1>
-        <p>Наполни корзину товарами из каталога</p>
-        <div class="cart__button">
-          <button>В каталог <span><img src="/public/icons/arrow-icon.svg"></span></button>
-        </div>
+        <h1 class="text-subtitle--bold-style">Тут пусто</h1>
+        <p class="text-color-gray text-subtitle-style">Наполни корзину товарами из <br> каталога</p>
+        <NuxtLink to="/categories">
+          <button>В каталог <img src="/public/icons/arrow-icon.svg"></button>
+        </NuxtLink>
       </article>
     </div>
   </section>
@@ -36,11 +36,14 @@ onMounted(async () => {
 
 <style scoped>
 .cart__content--clear {
-  height: 100%;
+  height: 100vh;
 }
 
 .cart__text {
   margin-top: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 
@@ -48,7 +51,18 @@ onMounted(async () => {
   margin: 2px 0 var(--size-xs) 0;
 }
 
-.cart__button {
-  padding-bottom: 110%;
+.cart__text button {
+  display: flex;
+  align-items: center;
+  background: var(--bg-color-main-opacity);
+  border-radius: 24px;
+  color: white;
+  font-weight: 600;
+  font-family: "Raleway", sans-serif;
+  padding: var(--size-small) var(--size-base);
+}
+
+.cart__text button img {
+  margin-left: var(--size-small);
 }
 </style>
