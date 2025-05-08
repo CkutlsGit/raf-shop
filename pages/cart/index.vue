@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import ItemCart from '~/components/cart/ItemCart.vue'
+
 const runTimeConfig = useRuntimeConfig()
 
 const dataCart = ref({} as ICart)
@@ -51,33 +53,9 @@ onMounted(async () => {
       </HeaderBlock>
       <article class="cart__items block-style">
         <ul class="cart__items--list">
-          <li>
-            <div class="item__main">
-              <div class="item__main--content">
-                <div class="item__img">
-                  <img src="@/assets/img/test-img-product.png" />
-                </div>
-                <div class="item__text">
-                  <h2 class="text-title-style">Ключ</h2>
-                <h2 class="text-subtitle--bold-style price-text">42 000 P</h2>
-                <div class="product__buttons--cart">
-                  <button class="switch-btn-del">-</button>
-                  <button class="amount-btn" disabled>
-                    2
-                  </button>
-                  <button class="switch-btn-add">+</button>
-                </div>
-                </div>
-              </div>
-              <div class="item__main--buttons">
-                <h2 class="text-subtitle--bold-style text-color-gray">2x</h2>
-                <div class="button__delete">
-                  <button><img src="@/assets/img/trash-icon.svg"></button>
-                </div>
-              </div>
-            </div>
-            <div class="line"></div>
-          </li>
+          <ItemCart></ItemCart>
+          <ItemCart></ItemCart>
+          <ItemCart></ItemCart>
         </ul>
       </article>
     </div>
@@ -115,87 +93,5 @@ onMounted(async () => {
 
 .cart__text button img {
   margin-left: var(--size-small);
-}
-
-.item__main {
-  display: flex;
-  justify-content: space-between;
-}
-
-.item__main img {
-  width: 30vw;
-  height: 30vw;
-  margin-bottom: var(--size-xs);
-}
-
-.item__main--content {
-  display: flex;
-  margin: var(--size-small) 0 0 var(--size-lg);
-}
-
-.item__text {
-  margin-left: var(--size-lg);
-}
-
-.price-text {
-  color: var(--text-color-green);
-  margin: 2px 0 var(--size-small) 0;
-}
-
-.product__buttons--cart {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-  font-size: 4vw;
-  font-weight: 600;
-}
-
-.product__buttons--cart button {
-  padding: var(--size-lg) var(--size-base);
-  background: var(--bg-color-main-opacity);
-  color: var(--text-color-main);
-  font-family: "Raleway", sans-serif;
-  font-variant-numeric: lining-nums proportional-nums;
-  text-align: center;
-  min-width: 10vw;
-}
-
-.switch-btn-del {
-  border-radius: var(--size-base) 0 0 var(--size-base);
-}
-
-.switch-btn-add {
-  border-radius: 0 var(--size-base) var(--size-base) 0;
-}
-
-.item__main--buttons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: var(--size-lg) var(--size-base);
-}
-
-.item__main--buttons button {
-  width: 10vw;
-  height: 10vw;
-  background: var(--bg-color-main-opacity);
-  border-radius: var(--size-lg);
-}
-
-.item__main--buttons button img {
-  width: 18px;
-  height: 18px;
-}
-
-.button__delete {
-  margin-top: 3.5vh;
-}
-
-.line {
-  width: 100%;
-  height: 2px;
-  background: var(--bg-color-main-opacity);
-  margin-top: -5px;
 }
 </style>
