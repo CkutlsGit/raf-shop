@@ -14,8 +14,10 @@ const props = defineProps<{
           <span><img src="/public/icons/arrow-back-icon.svg" /></span>
         </base-button>
       </NuxtLink>
-      <h1 class="text-title-style">{{ name }}</h1>
-      <slot name="amount"></slot>
+      <div class="block-header--text-title">
+        <h1 class="text-title-style">{{ name }}</h1>
+        <slot name="amount"></slot>
+      </div>
       </div>
       <slot name="rating"></slot>
     </nav>

@@ -7,7 +7,7 @@ const props = defineProps<{
 
 <template #header>
   <header class="block-header-style">
-    <nav class="block-header--text">
+    <nav class="block-header--text-title">
       <h1 class="text-title-style">{{ name }}</h1>
       <slot name="amount"></slot>
     </nav>
@@ -19,6 +19,4 @@ const props = defineProps<{
   </header>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

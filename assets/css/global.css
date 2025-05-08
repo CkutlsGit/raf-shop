@@ -94,6 +94,11 @@ ul {
   align-items: center;
 }
 
+.block-header--text-title {
+  display: flex;
+  align-items: start;
+}
+
 .header-block__nav {
   display: flex;
   align-items: center;
