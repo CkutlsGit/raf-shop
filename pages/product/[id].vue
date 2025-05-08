@@ -48,7 +48,7 @@ onMounted(async () => {
                 {{ productData.originalPrice }} ₽
               </h3>
             </div>
-            <div class="rating">
+            <div v-if="productData.rating > 0" class="rating">
               <h2 class="text-subtitle--bold-style">
                 {{ productData.rating }}
               </h2>
