@@ -94,7 +94,7 @@ const clickBuyButton = async (): Promise<void> => {
 }
 
 .product__buttons--main button {
-  width: 100%;
+  width: 50%;
   padding: var(--size-lg) var(--size-base);
   border-radius: var(--size-base);
   color: var(--text-color-main);
@@ -112,7 +112,7 @@ const clickBuyButton = async (): Promise<void> => {
 .product__buttons--cart {
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 50%;
 }
 
 .product__buttons--cart button {
