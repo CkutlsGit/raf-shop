@@ -89,4 +89,8 @@ onMounted(async () => {
 .cart__text button img {
   margin-left: var(--size-small);
 }
+
+.cart__items--list {
+  padding-top: 6px;
+}
 </style>

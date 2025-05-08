@@ -13,7 +13,7 @@ const props = defineProps<{
           <img :src="cartItem.product.imgUrl" />
         </div>
         <div class="item__text">
-          <h2 class="text-title-style">{{ cartItem.product.name }}</h2>
+          <h2 class="text-title-style item-title">{{ cartItem.product.name }}</h2>
           <h2 class="text-subtitle--bold-style price-text">{{ cartItem.product.price }} P</h2>
           <div class="product__buttons--cart">
             <button class="switch-btn-del">-</button>
@@ -37,12 +37,12 @@ const props = defineProps<{
 .item__main {
   display: flex;
   justify-content: space-between;
+  margin: 6px 4px 12px 4px;
 }
 
 .item__main img {
   width: 25vw;
   height: 25vw;
-  margin-bottom: var(--size-xs);
 }
 
 .item__main--content {
@@ -52,6 +52,10 @@ const props = defineProps<{
 
 .item__text {
   margin-left: var(--size-lg);
+}
+
+.item-title {
+  width: 40vw;
 }
 
 .price-text {
