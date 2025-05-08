@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import ItemCart from '~/components/cart/ItemCart.vue'
-
 const runTimeConfig = useRuntimeConfig()
 
 const dataCart = ref({} as ICart)
@@ -20,7 +18,6 @@ onMounted(async () => {
     )
 
     dataCart.value = response
-    console.log(dataCart.value.items.length)
   }
 })
 </script>
@@ -53,9 +50,7 @@ onMounted(async () => {
       </HeaderBlock>
       <article class="cart__items block-style">
         <ul class="cart__items--list">
-          <ItemCart></ItemCart>
-          <ItemCart></ItemCart>
-          <ItemCart></ItemCart>
+          <CartItemCart v-for="(item, index) in dataCart.items" :cart-item="item" :key="item.product.id" :last="index === dataCart.items.length - 1"></CartItemCart>
         </ul>
       </article>
     </div>

@@ -1,30 +1,35 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const props = defineProps<{
+  cartItem: ICartItem,
+  last: boolean
+}>()
+</script>
 
 <template>
   <li>
     <div class="item__main">
       <div class="item__main--content">
         <div class="item__img">
-          <img src="@/assets/img/test-img-product.png" />
+          <img :src="cartItem.product.imgUrl" />
         </div>
         <div class="item__text">
-          <h2 class="text-title-style">Ключ</h2>
-          <h2 class="text-subtitle--bold-style price-text">42 000 P</h2>
+          <h2 class="text-title-style">{{ cartItem.product.name }}</h2>
+          <h2 class="text-subtitle--bold-style price-text">{{ cartItem.product.price }} P</h2>
           <div class="product__buttons--cart">
             <button class="switch-btn-del">-</button>
-            <button class="amount-btn" disabled>2</button>
+            <button class="amount-btn" disabled>{{ cartItem.quantity }}</button>
             <button class="switch-btn-add">+</button>
           </div>
         </div>
       </div>
       <div class="item__main--buttons">
-        <h2 class="text-subtitle--bold-style text-color-gray">2x</h2>
+        <h2 class="text-subtitle--bold-style text-color-gray">{{ cartItem.quantity }} x</h2>
         <div class="button__delete">
           <button><img src="@/assets/img/trash-icon.svg" /></button>
         </div>
       </div>
     </div>
-    <div class="line"></div>
+    <div v-if="!last" class="line"></div>
   </li>
 </template>
 
