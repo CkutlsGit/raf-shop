@@ -7,7 +7,7 @@ const props = defineProps<{
 
 <template>
   <li>
-    <div class="item__main">
+    <div class="item__main" :class="{ 'item__main--last' : last }">
       <header class="item__main--content">
         <header class="item__img">
           <img :src="cartItem.product.imgUrl" />
@@ -38,6 +38,10 @@ const props = defineProps<{
   display: flex;
   justify-content: space-between;
   margin: 6px 4px 12px 4px;
+}
+
+.item__main--last {
+  margin: 6px 4px 0 4px;
 }
 
 .item__main img {
