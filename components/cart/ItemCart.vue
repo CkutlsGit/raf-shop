@@ -23,7 +23,7 @@ const props = defineProps<{
         </div>
       </div>
       <div class="item__main--buttons">
-        <h2 class="text-subtitle--bold-style text-color-gray">{{ cartItem.quantity }} x</h2>
+        <h2 class="text-subtitle--bold-style text-color-gray">{{ cartItem.quantity }}x</h2>
         <div class="button__delete">
           <button><img src="@/assets/img/trash-icon.svg" /></button>
         </div>
@@ -114,9 +114,9 @@ const props = defineProps<{
 }
 
 .line {
-  width: 100%;
+  width: 90%;
   height: 2px;
   background: var(--bg-color-main-opacity);
-  margin-top: -5px;
+  margin: -5px auto 0 auto;
 }
 </style>
