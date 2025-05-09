@@ -3,11 +3,21 @@ interface IAuthToken {
   authToken: string
 }
 
+interface IPath {
+  name: string,
+  path?: string
+}
+
 const runTimeConfig = useRuntimeConfig()
 const emit = defineEmits(["isLoading"])
 const userIcon = ref("")
 
-const navArray: Array<string> = ["cart"]
+const navRoutes: IPath[]  = [
+  {
+    name: 'cart',
+    path: '/cart'
+  }
+]
 
 onMounted((): void => {
   const authToken: string | null = GetCookie("authtoken")
@@ -83,10 +93,12 @@ const checkTelegramWebApp = async (): Promise<void> => {
         <img class="header__logo" src="@/assets/img/icon.svg" alt="Bobby" />
       </NuxtLink>
       <ul class="header__nav-list">
-        <li v-for="(navItem, index) in navArray" :key="index">
-          <button>
-            <span><img :src="`/icons/${navItem}-icon.svg`" /></span>
+        <li v-for="(navItem, index) in navRoutes" :key="index">
+          <NuxtLink :to="navItem.path">
+            <button>
+            <span><img :src="`/icons/${navItem.name}-icon.svg`" /></span>
           </button>
+          </NuxtLink>
         </li>
         <img class="header__nav-list--user-icon" :src="userIcon" />
       </ul>
