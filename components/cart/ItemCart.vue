@@ -8,11 +8,11 @@ const props = defineProps<{
 <template>
   <li>
     <div class="item__main">
-      <div class="item__main--content">
-        <div class="item__img">
+      <header class="item__main--content">
+        <header class="item__img">
           <img :src="cartItem.product.imgUrl" />
-        </div>
-        <div class="item__text">
+        </header>
+        <article class="item__text">
           <h2 class="text-title-style item-title">{{ cartItem.product.name }}</h2>
           <h2 class="text-subtitle--bold-style price-text">{{ cartItem.product.price }} ₽</h2>
           <div class="product__buttons--cart">
@@ -20,16 +20,16 @@ const props = defineProps<{
             <button class="amount-btn" disabled>{{ cartItem.quantity }}</button>
             <button class="switch-btn-add">+</button>
           </div>
-        </div>
-      </div>
-      <div class="item__main--buttons">
+        </article>
+      </header>
+      <article class="item__main--buttons">
         <h2 class="text-subtitle--bold-style text-color-gray">{{ cartItem.quantity }}x</h2>
         <div class="button__delete">
           <button><img src="@/assets/img/trash-icon.svg" /></button>
         </div>
-      </div>
+      </article>
     </div>
-    <div v-if="!last" class="line"></div>
+    <footer v-if="!last" class="line"></footer>
   </li>
 </template>
 
