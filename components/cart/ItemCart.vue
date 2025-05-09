@@ -94,7 +94,7 @@ const props = defineProps<{
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: var(--size-lg) var(--size-base);
+  padding: var(--size-lg);
 }
 
 .item__main--buttons button {
