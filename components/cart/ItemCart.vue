@@ -14,7 +14,7 @@ const props = defineProps<{
         </div>
         <div class="item__text">
           <h2 class="text-title-style item-title">{{ cartItem.product.name }}</h2>
-          <h2 class="text-subtitle--bold-style price-text">{{ cartItem.product.price }} P</h2>
+          <h2 class="text-subtitle--bold-style price-text">{{ cartItem.product.price }} ₽</h2>
           <div class="product__buttons--cart">
             <button class="switch-btn-del">-</button>
             <button class="amount-btn" disabled>{{ cartItem.quantity }}</button>
