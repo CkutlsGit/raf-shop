@@ -68,8 +68,6 @@ const props = defineProps<{
   align-items: center;
   text-align: center;
   width: 100%;
-  font-size: 4vw;
-  font-weight: 600;
 }
 
 .product__buttons--cart button {
@@ -78,6 +76,8 @@ const props = defineProps<{
   color: var(--text-color-main);
   font-family: "Raleway", sans-serif;
   font-variant-numeric: lining-nums proportional-nums;
+  font-size: 4vw;
+  font-weight: 600;
   text-align: center;
   min-width: 10vw;
 }
