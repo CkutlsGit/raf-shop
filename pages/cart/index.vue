@@ -23,7 +23,8 @@ onMounted(async () => {
 </script>
 
 <template>
-  <section class="cart">
+  <BaseLoader v-if="!dataCart.items"></BaseLoader>
+  <section v-else class="cart">
     <div
       v-if="dataCart?.items?.length <= 0"
       class="cart__content--clear block-style"
